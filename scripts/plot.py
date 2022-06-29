@@ -29,6 +29,7 @@ if __name__ == "__main__":
     parser.add_argument('-od', '--output-dir', default='./figures')
     parser.add_argument('-my', '--min-y', default=-1, type=int)
     parser.add_argument('-xy', '--max-y', default=-1, type=int)
+    parser.add_argument('-alg', '--algorithms', default='all')
 
     args = parser.parse_args()
     print("Reading results from: ", args.input_dir)
@@ -75,33 +76,34 @@ if __name__ == "__main__":
 
     for metric in metrics:
         for graph_algo in graph_algorithms:
-            cur_dir = join(args.input_dir, graph_algo)
-            reorder_algorithms = [d for d in listdir(cur_dir)
-                                  if isdir(join(cur_dir, d))]
+            if args.algorithms == 'all' or graph_algo == args.algorithms:
+                cur_dir = join(args.input_dir, graph_algo)
+                reorder_algorithms = [d for d in listdir(cur_dir)
+                                      if isdir(join(cur_dir, d))]
 
-            reorder_algo_results = {}
-            plt.figure(figsize=(width, height))
-            for reorder_algo in reorder_algorithms:
-                json_dir = join(cur_dir, reorder_algo)
-                graphs = [f for f in listdir(json_dir)
-                          if isfile(join(json_dir, f))]
-                graphs.sort(key=lambda x: graphs_order[splitext(x)[0]])
-                graphs_results = {}
-                for graph in graphs:
-                    graph_name = splitext(graph)[0]
-                    graphs_results[graph_name] = extract_data_from_json(
-                        join(json_dir, graph), {metric: 0})[metric]
-                reorder_algo_results[reorder_algo] = graphs_results
+                reorder_algo_results = {}
+                plt.figure(figsize=(width, height))
+                for reorder_algo in reorder_algorithms:
+                    json_dir = join(cur_dir, reorder_algo)
+                    graphs = [f for f in listdir(json_dir)
+                              if isfile(join(json_dir, f))]
+                    graphs.sort(key=lambda x: graphs_order[splitext(x)[0]])
+                    graphs_results = {}
+                    for graph in graphs:
+                        graph_name = splitext(graph)[0]
+                        graphs_results[graph_name] = extract_data_from_json(
+                            join(json_dir, graph), {metric: 0})[metric]
+                    reorder_algo_results[reorder_algo] = graphs_results
 
-                plt.plot(list(graphs_results.keys()),
-                         list(graphs_results.values()),
-                         label=reorder_algo)
-                plt.title(graph_algo.upper() + ' ' + metric)
+                    plt.plot(list(graphs_results.keys()),
+                             list(graphs_results.values()),
+                             label=reorder_algo)
+                    plt.title(graph_algo.upper() + ' ' + metric)
 
-            # pp(reorder_algo_results, depth=2)
-            plt.legend()
-            plt.savefig(graph_algo + '_' + metric +
-                        '_' + 'by_' + sort_by + '.png')
+                # pp(reorder_algo_results, depth=2)
+                plt.legend()
+                plt.savefig(graph_algo + '_' + metric +
+                            '_' + 'by_' + sort_by + '.png')
     #     print(json_dir)
     #     print(graphs)
 
