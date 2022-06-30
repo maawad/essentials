@@ -7,6 +7,7 @@ set(EXPERIMENTS_SOURCES
   shared_ptr.cu
   templated.cu
   spmm.cu
+  bucketing_coo.cu
   # enable_if.cu # [error]
 )
 
@@ -16,8 +17,8 @@ foreach(SOURCE IN LISTS EXPERIMENTS_SOURCES)
   get_filename_component(EXPERIMENT "${SOURCE}" NAME_WLE)
   add_executable(${EXPERIMENT} "${SOURCE}")
   target_link_libraries(${EXPERIMENT} PRIVATE essentials)
-  set_target_properties(${EXPERIMENT} 
-    PROPERTIES 
+  set_target_properties(${EXPERIMENT}
+    PROPERTIES
         CUDA_ARCHITECTURES ${ESSENTIALS_ARCHITECTURES})
   message(STATUS "Example Added: ${EXPERIMENT}")
 endforeach()

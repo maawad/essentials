@@ -34,6 +34,7 @@ set(PROJECT_DEPS_DIR externals)
 # end /* Dependencies directory */
 
 # begin /* Include cmake modules */
+include(${PROJECT_SOURCE_DIR}/cmake/FetchBGHT.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/FetchThrustCUB.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/FetchModernGPU.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/FetchCXXOpts.cmake)
@@ -108,6 +109,7 @@ set(ESSENTIALS_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 ####################################################
 target_include_directories(essentials
   INTERFACE ${ESSENTIALS_INCLUDE_DIR}
+  INTERFACE ${BGHT_INCLUDE_DIR}
   INTERFACE ${CXXOPTS_INCLUDE_DIR}
   INTERFACE ${THRUST_INCLUDE_DIR}
   INTERFACE ${CUB_INCLUDE_DIR}
