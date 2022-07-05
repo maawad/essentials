@@ -9,7 +9,7 @@ set(FETCHCONTENT_BASE_DIR ${FC_BASE})
 FetchContent_Declare(
   bght
     GIT_REPOSITORY https://github.com/owensgroup/BGHT.git
-    GIT_TAG        main
+    GIT_TAG        essentials
 )
 
 FetchContent_GetProperties(BGHT)
@@ -20,5 +20,21 @@ if(NOT BGHT_POPULATED)
 endif()
 
 # Exposing BGHT's source and include directory
-message(PROJECT_SOURCE_DIR="${bght_SOURCE_DIR}")
 set(BGHT_INCLUDE_DIR "${bght_SOURCE_DIR}/include")
+
+
+FetchContent_Declare(
+  cuco
+    GIT_REPOSITORY https://github.com/NVIDIA/cuCollections.git
+    GIT_TAG        dev
+)
+
+FetchContent_GetProperties(cuco)
+if(NOT CUCO_POPULATED)
+  FetchContent_Populate(
+    cuco
+  )
+endif()
+
+# Exposing cuCollections's source and include directory
+set(CUCO_INCLUDE_DIR "${cuco_SOURCE_DIR}/include")
