@@ -154,18 +154,13 @@ def figure1(parser):
 
     graph_algorithms = [d for d in listdir(args.input_dir)
                         if isdir(join(args.input_dir, d))]
-    width = 20
-    height = 4
-    # metrics = ['L1ReadHitRate',
-    #            'L2ReadHitRate',
-    #            'L1Sectors',
-    #            'L2Sectors',
-    #            'DRAMSectors']
 
     metrics = ['L1Sectors',
                'L2Sectors',
                'DRAMSectors']
 
+    pretty_reorder_algo = {'hub': 'hub', 'deg': 'deg', 'RCM': 'RCM',
+                           'rand': 'rand', 'write_reorder2': 'BOBA', 'gorder': 'Gorder'}
     pretty_metrics = ['L1',
                       'L2',
                       'DRAM']
@@ -230,8 +225,6 @@ def figure1(parser):
         graphs_order['ljournal-2008'] = 79023142
         graphs_order['arabic-2005'] = 631153669
 
-    reorder_algorithms_ = {}
-    sorted_datasets_ = {}
     for metric in metrics:
         metric_df = pd.DataFrame()
         for graph_algo in graph_algorithms:
@@ -239,13 +232,14 @@ def figure1(parser):
                 cur_dir = join(args.input_dir, graph_algo)
                 reorder_algorithms = [d for d in listdir(cur_dir)
                                       if isdir(join(cur_dir, d))]
-                reorder_algorithms_ = reorder_algorithms
+                reorder_algorithms.remove('chub')
+                reorder_algorithms.remove('edgeW3')
+
                 for reorder_algo in reorder_algorithms:
                     json_dir = join(cur_dir, reorder_algo)
                     graphs = [f for f in listdir(json_dir)
                               if isfile(join(json_dir, f))]
                     graphs.sort(key=lambda x: graphs_order[splitext(x)[0]])
-                    sorted_datasets_ = graphs
                     # print(graphs)
                     graphs_results = {}
                     for graph in graphs:
@@ -256,76 +250,11 @@ def figure1(parser):
                     # print(graphs_results)
                     df = pd.DataFrame.from_dict(
                         graphs_results, orient='index', columns=[reorder_algo])
-                    # .items(), columns = ['datasets', reorder_algo]
-                    # print(df)
-                    metric_df[reorder_algo] = df
+                    metric_df[pretty_reorder_algo[reorder_algo]] = df
                 metric_df.rename_axis('dataset').reset_index()
                 results_dfs[metric] = metric_df.rename_axis(
                     'dataset').reset_index()
 
-                # alt.Chart(graphs_results).mark_points().encode(x=[''])
-                # plt.title(graph_algo.upper() + ' ' + metric)
-
-                # pp(reorder_algo_results, depth=2)
-                # plt.legend()
-                # plt.savefig(graph_algo + '_' + metric +
-                #             '_' + 'by_' + sort_by + '.png')
-    #     print(json_dir)
-        # print(metric_df)
-    #     print(graphs)
-    # print(results_dfs)
-    # print(graph_algo)
-    # print(reorder_algorithms)
-    # pp(results_dfs)
-    # results_dfs.reset_index(inplace=True)
-    # print(L1HitRate_df)
-
-    # for i, metric in zip(range(0, len(metrics)), metrics):
-    #     # chart = alt.Chart(results_dfs[metric]).transform_fold(as_=["Reorder Algorithm", metric], fold=reorder_algorithms_).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
-    #     #     alt.X('dataset'), alt.Y(metric + ':Q', title=metric + " (%)"),  color='Reorder Algorithm:N')
-    #     # scale=alt.Scale(type="log")
-    #     if 'Sector' in metric:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (Sectors)"),  color='Reorder Algorithm:N')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-    #     else:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (%)"),  color='Reorder Algorithm:N')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-
-    # for i, metric in zip(range(0, len(metrics)), metrics):
-    #     # chart = alt.Chart(results_dfs[metric]).transform_fold(as_=["Reorder Algorithm", metric], fold=reorder_algorithms_).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
-    #     #     alt.X('dataset'), alt.Y(metric + ':Q', title=metric + " (%)"),  color='Reorder Algorithm:N')
-    #     # scale=alt.Scale(type="log")
-    #     if 'Sector' in metric:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_bar().encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (Sectors)"),  color='Reorder Algorithm:N', column='Reorder Algorithm')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-    #     else:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_bar().encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (%)"),  color='Reorder Algorithm:N', column='Reorder Algorithm')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-    #     # chart = alt.Chart(results_dfs[metric]).mark_point().encode(
-    #     #     alt.X('index'), alt.Y('gorder'),  alt.Color('Origin', type='nominal'))
-    #     # chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #     # print(chart_fname)
-    #     # chart.save(chart_fname)
     longform = pd.DataFrame()
     for metric, pmetric in zip(metrics, pretty_metrics):
         tmp = results_dfs[metric].melt(
@@ -333,49 +262,17 @@ def figure1(parser):
         tmp['Level'] = pmetric
         # if metric == metrics[0]:
         longform = longform.append(tmp)
-        # else:
-        # longform = pd.concat([longform, tmp], axis=0, join='inner')
-        # print(longform)
 
     chart = alt.Chart(longform).mark_bar().encode(alt.X('dataset', sort=None, stack=None), alt.Y(
-        'Percentage of hits', scale=alt.Scale(domain=[0, 100])), color=alt.Color('Level', sort=pretty_metrics),
-        order=alt.Order('color_pretty_metrics_index:Q'), column='Reorder Algorithm')
+        'Percentage of hits', scale=alt.Scale(domain=[0, 100])),
+        color=alt.Color('Level', sort=pretty_metrics), order=alt.Order('color_pretty_metrics_index:Q'),
+        column='Reorder Algorithm')
+    # .configure_axis(labelFontSize=15,
+    # titleFontSize=20).configure_legend(titleFontSize=20,
+    # labelFontSize=15).configure_title(fontSize=50)
+
     chart_fname = args.algorithms + '_' + 'by_' + sort_by + '.svg'
     chart.save(chart_fname, scale_factor=2.0)
-
-    # encode is necessary because we want bytes, not a Unicode str
-    # contents = vl2img(chart.to_json().encode(), 'pdf')
-    # f = open(chart_fname, "wb")
-    # f.write(contents)
-    # f.close()
-
-    # chart.save(chart_fname)
-    # save(chart,   formats=["tablehtml", "tablemd", "md", "html", "png", "pdf"])
-    # for i, metric in zip(range(0, len(metrics)), metrics):
-    #     # chart = alt.Chart(results_dfs[metric]).transform_fold(as_=["Reorder Algorithm", metric], fold=reorder_algorithms_).mark_line(point=alt.OverlayMarkDef(filled=False, fill='white')).encode(
-    #     #     altt.X('dataset'), alt.Y(metric + ':Q', title=metric + " (%)"),  color='Reorder Algorithm:N')
-    #     # scale=alt.Scale(type="log")
-    #     if 'Sector' in metric:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_bar().encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (Sectors)", stack=None),  color='Reorder Algorithm:N', column='Reorder Algorithm')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-    #     else:
-    #         temp_longform = results_dfs[metric].melt(
-    #             'dataset', var_name='Reorder Algorithm', value_name=metric)
-    #         chart = alt.Chart(temp_longform).mark_bar().encode(
-    #             alt.X('dataset', sort=sorted_datasets_), alt.Y(metric + ':Q', title=metric + " (%)", stack=None),  color='Reorder Algorithm:N', column='Reorder Algorithm')
-    #         chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #         print(chart_fname)
-    #         chart.save(chart_fname)
-    #     # chart = alt.Chart(results_dfs[metric]).mark_point().encode(
-    #     #     alt.X('index'), alt.Y('gorder'),  alt.Color('Origin', type='nominal'))
-    #     # chart_fname = args.algorithms + '_' + metric + '_' + 'by_' + sort_by + '.svg'
-    #     # print(chart_fname)
-    #     # chart.save(chart_fname)
 
 
 if __name__ == "__main__":
