@@ -244,6 +244,8 @@ def figure1(parser):
                     graphs_results = {}
                     for graph in graphs:
                         graph_name = splitext(graph)[0]
+                        print(metric)
+                        print(graph_name)
                         graphs_results[graph_name] = extract_data_from_csv(
                             join(json_dir, graph), {metric: 0})[metric]
 
