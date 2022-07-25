@@ -1,0 +1,334 @@
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.rand.mtx --csv csv/tc/rand/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2292.98681640625,"graph_name":"rgg_n_2_24_s0.rand","num-triangles":0,"run-time":235.23072814941406,"sort-time":33276.16796875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.hub.mtx --csv csv/tc/hub/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2281.027587890625,"graph_name":"rgg_n_2_24_s0.hub","num-triangles":0,"run-time":209.65908966064453,"sort-time":19345.703125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.chub.mtx --csv csv/tc/chub/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2325.70361328125,"graph_name":"rgg_n_2_24_s0.chub","num-triangles":0,"run-time":220.01326904296874,"sort-time":17977.71484375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.deg.mtx --csv csv/tc/deg/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777215,"convert-time":2445.52392578125,"graph_name":"rgg_n_2_24_s0.deg","num-triangles":0,"run-time":201.66462097167968,"sort-time":20686.99609375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.gorder.mtx --csv csv/tc/gorder/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2282.814453125,"graph_name":"rgg_n_2_24_s0.gorder","num-triangles":0,"run-time":38.313880920410156,"sort-time":16218.7265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.edgeW3.mtx --csv csv/tc/edgeW3/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2332.379150390625,"graph_name":"rgg_n_2_24_s0.edgeW3","num-triangles":0,"run-time":42.32212371826172,"sort-time":30661.064453125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/write_reorder2_rgg_n_2_24_s0.mtx --csv csv/tc/write_reorder2/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2241.808349609375,"graph_name":"write_reorder2_rgg_n_2_24_s0","num-triangles":0,"run-time":39.272959518432614,"sort-time":28044.853515625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.mtx.RCM.mtx --json csv/tc/RCM/rgg_n_2_24_s0.csv
+Error: input matrix must be symmetric
+{"M":265114400,"N":16777216,"convert-time":2230.084716796875,"graph_name":"rgg_n_2_24_s0.mtx.RCM","num-triangles":0,"run-time":37.66456298828125,"sort-time":22321.8515625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.rand.mtx --csv csv/tc/rand/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1092.8568115234375,"graph_name":"rgg_n_2_23_s0.rand","num-triangles":0,"run-time":99.39066772460937,"sort-time":14995.80859375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.hub.mtx --csv csv/tc/hub/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1107.7109375,"graph_name":"rgg_n_2_23_s0.hub","num-triangles":0,"run-time":91.60396728515624,"sort-time":8694.0791015625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.chub.mtx --csv csv/tc/chub/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1194.271728515625,"graph_name":"rgg_n_2_23_s0.chub","num-triangles":0,"run-time":95.65481033325196,"sort-time":8555.673828125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.deg.mtx --csv csv/tc/deg/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388607,"convert-time":1157.274658203125,"graph_name":"rgg_n_2_23_s0.deg","num-triangles":0,"run-time":86.97579498291016,"sort-time":9279.576171875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.gorder.mtx --csv csv/tc/gorder/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1088.711669921875,"graph_name":"rgg_n_2_23_s0.gorder","num-triangles":0,"run-time":17.64822998046875,"sort-time":7101.81689453125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.edgeW3.mtx --csv csv/tc/edgeW3/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1148.5634765625,"graph_name":"rgg_n_2_23_s0.edgeW3","num-triangles":0,"run-time":19.2999418258667,"sort-time":12891.68359375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/write_reorder2_rgg_n_2_23_s0.mtx --csv csv/tc/write_reorder2/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1101.96630859375,"graph_name":"write_reorder2_rgg_n_2_23_s0","num-triangles":0,"run-time":18.27839946746826,"sort-time":12536.47265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.mtx.RCM.mtx --json csv/tc/RCM/rgg_n_2_23_s0.csv
+Error: input matrix must be symmetric
+{"M":127002786,"N":8388608,"convert-time":1094.0047607421875,"graph_name":"rgg_n_2_23_s0.mtx.RCM","num-triangles":0,"run-time":17.322802734375,"sort-time":10823.728515625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.rand.mtx --csv csv/tc/rand/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":587.953125,"graph_name":"rgg_n_2_22_s0.rand","num-triangles":0,"run-time":42.1685245513916,"sort-time":7342.77734375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.hub.mtx --csv csv/tc/hub/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":546.70849609375,"graph_name":"rgg_n_2_22_s0.hub","num-triangles":0,"run-time":38.02828750610352,"sort-time":4161.8115234375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.chub.mtx --csv csv/tc/chub/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":514.9921264648438,"graph_name":"rgg_n_2_22_s0.chub","num-triangles":0,"run-time":40.07055320739746,"sort-time":3493.604248046875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.deg.mtx --csv csv/tc/deg/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194301,"convert-time":576.574462890625,"graph_name":"rgg_n_2_22_s0.deg","num-triangles":0,"run-time":36.06906852722168,"sort-time":4144.89599609375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.gorder.mtx --csv csv/tc/gorder/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":521.470947265625,"graph_name":"rgg_n_2_22_s0.gorder","num-triangles":0,"run-time":8.390656280517579,"sort-time":3084.04638671875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.edgeW3.mtx --csv csv/tc/edgeW3/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":583.2386474609375,"graph_name":"rgg_n_2_22_s0.edgeW3","num-triangles":0,"run-time":9.103052997589112,"sort-time":6049.46826171875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/write_reorder2_rgg_n_2_22_s0.mtx --csv csv/tc/write_reorder2/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":593.1079711914063,"graph_name":"write_reorder2_rgg_n_2_22_s0","num-triangles":0,"run-time":8.76226577758789,"sort-time":6281.462890625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.mtx.RCM.mtx --json csv/tc/RCM/rgg_n_2_22_s0.csv
+Error: input matrix must be symmetric
+{"M":60718396,"N":4194304,"convert-time":565.327880859375,"graph_name":"rgg_n_2_22_s0.mtx.RCM","num-triangles":0,"run-time":8.300748872756959,"sort-time":5267.263671875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.rand.mtx --csv csv/tc/rand/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":113891327,"N":1139905,"convert-time":1123.84814453125,"graph_name":"hollywood-2009.rand","num-triangles":0,"run-time":4119.809326171875,"sort-time":14863.43359375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.hub.mtx --csv csv/tc/hub/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":112751422,"N":1139905,"convert-time":1047.719970703125,"graph_name":"hollywood-2009.hub","num-triangles":0,"run-time":18231.2337890625,"sort-time":11447.341796875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.chub.mtx --csv csv/tc/chub/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":112751422,"N":1139905,"convert-time":1186.186279296875,"graph_name":"hollywood-2009.chub","num-triangles":0,"run-time":4468.950390625,"sort-time":7092.33349609375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.deg.mtx --csv csv/tc/deg/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":112751422,"N":1107243,"convert-time":1038.2376708984375,"graph_name":"hollywood-2009.deg","num-triangles":0,"run-time":18153.5384765625,"sort-time":9509.462890625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.gorder.mtx --csv csv/tc/gorder/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":112751422,"N":1139905,"convert-time":1036.3310546875,"graph_name":"hollywood-2009.gorder","num-triangles":0,"run-time":14145.378125,"sort-time":6573.37060546875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.edgeW3.mtx --csv csv/tc/edgeW3/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":113891327,"N":1139905,"convert-time":1120.195556640625,"graph_name":"hollywood-2009.edgeW3","num-triangles":0,"run-time":8504901.2,"sort-time":14361.19921875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/write_reorder2_hollywood-2009.mtx --csv csv/tc/write_reorder2/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":113891327,"N":1139905,"convert-time":1144.9364013671875,"graph_name":"write_reorder2_hollywood-2009","num-triangles":0,"run-time":5097.336376953125,"sort-time":13652.6162109375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.mtx.RCM.mtx --json csv/tc/RCM/hollywood-2009.csv
+Error: input matrix must be symmetric
+{"M":113891327,"N":1139905,"convert-time":1178.349609375,"graph_name":"hollywood-2009.mtx.RCM","num-triangles":0,"run-time":7342.152880859375,"sort-time":10355.8212890625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.rand.mtx --csv csv/tc/rand/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":14.163968086242676,"graph_name":"coAuthorsCiteseer.rand","num-triangles":0,"run-time":1.4689280271530152,"sort-time":144.03173828125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.hub.mtx --csv csv/tc/hub/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.677568435668945,"graph_name":"coAuthorsCiteseer.hub","num-triangles":0,"run-time":11.606220817565918,"sort-time":71.78854370117188}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.chub.mtx --csv csv/tc/chub/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.685759544372559,"graph_name":"coAuthorsCiteseer.chub","num-triangles":0,"run-time":2.0314112544059753,"sort-time":61.58438491821289}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.deg.mtx --csv csv/tc/deg/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.604864120483398,"graph_name":"coAuthorsCiteseer.deg","num-triangles":0,"run-time":11.183001518249512,"sort-time":70.40306854248047}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.gorder.mtx --csv csv/tc/gorder/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.676544189453125,"graph_name":"coAuthorsCiteseer.gorder","num-triangles":0,"run-time":3.363532853126526,"sort-time":53.3309440612793}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.edgeW3.mtx --csv csv/tc/edgeW3/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.923328399658203,"graph_name":"coAuthorsCiteseer.edgeW3","num-triangles":0,"run-time":2.7141119956970217,"sort-time":101.21727752685547}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/write_reorder2_coAuthorsCiteseer.mtx --csv csv/tc/write_reorder2/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.940735816955566,"graph_name":"write_reorder2_coAuthorsCiteseer","num-triangles":0,"run-time":3.9205888509750366,"sort-time":105.96556854248047}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.mtx.RCM.mtx --json csv/tc/RCM/coAuthorsCiteseer.csv
+Error: input matrix must be symmetric
+{"M":1628268,"N":227320,"convert-time":13.945856094360352,"graph_name":"coAuthorsCiteseer.mtx.RCM","num-triangles":0,"run-time":3.4895872116088866,"sort-time":90.429443359375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.rand.mtx --csv csv/tc/rand/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.899072647094727,"graph_name":"coAuthorsDBLP.rand","num-triangles":0,"run-time":1.1365375757217406,"sort-time":181.6453094482422}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.hub.mtx --csv csv/tc/hub/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.994304656982422,"graph_name":"coAuthorsDBLP.hub","num-triangles":0,"run-time":11.133952045440674,"sort-time":89.08799743652344}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.chub.mtx --csv csv/tc/chub/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.706560134887695,"graph_name":"coAuthorsDBLP.chub","num-triangles":0,"run-time":1.452339243888855,"sort-time":73.95635223388672}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.deg.mtx --csv csv/tc/deg/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.732160568237305,"graph_name":"coAuthorsDBLP.deg","num-triangles":0,"run-time":11.065036869049072,"sort-time":83.14265441894531}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.gorder.mtx --csv csv/tc/gorder/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.520191192626953,"graph_name":"coAuthorsDBLP.gorder","num-triangles":0,"run-time":4.4603392601013185,"sort-time":63.722496032714844}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.edgeW3.mtx --csv csv/tc/edgeW3/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.80486488342285,"graph_name":"coAuthorsDBLP.edgeW3","num-triangles":0,"run-time":3.5144704818725585,"sort-time":131.16517639160156}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/write_reorder2_coAuthorsDBLP.mtx --csv csv/tc/write_reorder2/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.79052734375,"graph_name":"write_reorder2_coAuthorsDBLP","num-triangles":0,"run-time":3.2671743869781493,"sort-time":138.0536346435547}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.mtx.RCM.mtx --json csv/tc/RCM/coAuthorsDBLP.csv
+Error: input matrix must be symmetric
+{"M":1955352,"N":299067,"convert-time":16.763904571533203,"graph_name":"coAuthorsDBLP.mtx.RCM","num-triangles":0,"run-time":3.1713280200958254,"sort-time":122.95372772216797}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.rand.mtx --csv csv/tc/rand/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":934.6641845703125,"graph_name":"delaunay_n24.rand","num-triangles":0,"run-time":38.68334045410156,"sort-time":12706.3671875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.hub.mtx --csv csv/tc/hub/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":915.3853149414063,"graph_name":"delaunay_n24.hub","num-triangles":0,"run-time":41.060761260986325,"sort-time":7021.77197265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.chub.mtx --csv csv/tc/chub/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":970.0914916992188,"graph_name":"delaunay_n24.chub","num-triangles":0,"run-time":39.400140380859376,"sort-time":6934.8759765625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.deg.mtx --csv csv/tc/deg/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":936.99072265625,"graph_name":"delaunay_n24.deg","num-triangles":0,"run-time":41.17350387573242,"sort-time":7218.787109375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.gorder.mtx --csv csv/tc/gorder/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":953.975830078125,"graph_name":"delaunay_n24.gorder","num-triangles":0,"run-time":9.369805145263673,"sort-time":6293.89013671875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.edgeW3.mtx --csv csv/tc/edgeW3/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":931.2665405273438,"graph_name":"delaunay_n24.edgeW3","num-triangles":0,"run-time":9.505177879333496,"sort-time":9400.7451171875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/write_reorder2_delaunay_n24.mtx --csv csv/tc/write_reorder2/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":940.2767333984375,"graph_name":"write_reorder2_delaunay_n24","num-triangles":0,"run-time":9.536102485656738,"sort-time":9711.3134765625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.mtx.RCM.mtx --json csv/tc/RCM/delaunay_n24.csv
+Error: input matrix must be symmetric
+{"M":100663202,"N":16777216,"convert-time":928.9922485351563,"graph_name":"delaunay_n24.mtx.RCM","num-triangles":0,"run-time":8.84572172164917,"sort-time":8644.1298828125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.rand.mtx --csv csv/tc/rand/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":446.1721496582031,"graph_name":"delaunay_n23.rand","num-triangles":0,"run-time":17.951845741271974,"sort-time":5901.107421875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.hub.mtx --csv csv/tc/hub/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":467.8758544921875,"graph_name":"delaunay_n23.hub","num-triangles":0,"run-time":19.048447608947754,"sort-time":3201.50830078125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.chub.mtx --csv csv/tc/chub/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":457.54571533203125,"graph_name":"delaunay_n23.chub","num-triangles":0,"run-time":18.212863159179687,"sort-time":3080.994873046875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.deg.mtx --csv csv/tc/deg/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":447.58734130859375,"graph_name":"delaunay_n23.deg","num-triangles":0,"run-time":18.932223320007324,"sort-time":3197.75634765625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.gorder.mtx --csv csv/tc/gorder/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":448.6973571777344,"graph_name":"delaunay_n23.gorder","num-triangles":0,"run-time":4.482150220870972,"sort-time":2897.72021484375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.edgeW3.mtx --csv csv/tc/edgeW3/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":491.61114501953125,"graph_name":"delaunay_n23.edgeW3","num-triangles":0,"run-time":4.554137372970581,"sort-time":4350.60302734375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/write_reorder2_delaunay_n23.mtx --csv csv/tc/write_reorder2/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":468.4451904296875,"graph_name":"write_reorder2_delaunay_n23","num-triangles":0,"run-time":4.561407947540284,"sort-time":4370.697265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.mtx.RCM.mtx --json csv/tc/RCM/delaunay_n23.csv
+Error: input matrix must be symmetric
+{"M":50331568,"N":8388608,"convert-time":468.9858703613281,"graph_name":"delaunay_n23.mtx.RCM","num-triangles":0,"run-time":4.227993631362915,"sort-time":3970.672607421875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.rand.mtx --csv csv/tc/rand/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":224.8785858154297,"graph_name":"delaunay_n22.rand","num-triangles":0,"run-time":8.145100784301757,"sort-time":2723.481689453125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.hub.mtx --csv csv/tc/hub/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":232.63539123535156,"graph_name":"delaunay_n22.hub","num-triangles":0,"run-time":8.661606788635254,"sort-time":1439.916015625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.chub.mtx --csv csv/tc/chub/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":235.93267822265625,"graph_name":"delaunay_n22.chub","num-triangles":0,"run-time":8.28508186340332,"sort-time":1367.034912109375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.deg.mtx --csv csv/tc/deg/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":239.0681610107422,"graph_name":"delaunay_n22.deg","num-triangles":0,"run-time":8.646553897857666,"sort-time":1433.822265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.gorder.mtx --csv csv/tc/gorder/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":222.31961059570313,"graph_name":"delaunay_n22.gorder","num-triangles":0,"run-time":2.459340786933899,"sort-time":1273.4249267578125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.edgeW3.mtx --csv csv/tc/edgeW3/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":222.48345947265625,"graph_name":"delaunay_n22.edgeW3","num-triangles":0,"run-time":2.484531283378601,"sort-time":2011.979736328125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/write_reorder2_delaunay_n22.mtx --csv csv/tc/write_reorder2/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":222.56640625,"graph_name":"write_reorder2_delaunay_n22","num-triangles":0,"run-time":2.496614384651184,"sort-time":2037.4046630859375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.mtx.RCM.mtx --json csv/tc/RCM/delaunay_n22.csv
+Error: input matrix must be symmetric
+{"M":25165738,"N":4194304,"convert-time":224.83251953125,"graph_name":"delaunay_n22.mtx.RCM","num-triangles":0,"run-time":2.332467246055603,"sort-time":1850.7315673828125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.rand.mtx --csv csv/tc/rand/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":146.75149536132813,"graph_name":"great-britain_osm.rand","num-triangles":0,"run-time":2.254745626449585,"sort-time":1823.02001953125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.hub.mtx --csv csv/tc/hub/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":146.1739501953125,"graph_name":"great-britain_osm.hub","num-triangles":0,"run-time":2.248806381225586,"sort-time":763.5241088867188}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.chub.mtx --csv csv/tc/chub/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":145.89132690429688,"graph_name":"great-britain_osm.chub","num-triangles":0,"run-time":2.2245376348495483,"sort-time":763.3541259765625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.deg.mtx --csv csv/tc/deg/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":144.91238403320313,"graph_name":"great-britain_osm.deg","num-triangles":0,"run-time":2.216755199432373,"sort-time":761.0081176757813}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.gorder.mtx --csv csv/tc/gorder/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":135.86944580078125,"graph_name":"great-britain_osm.gorder","num-triangles":0,"run-time":1.1734015882015227,"sort-time":710.086669921875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.edgeW3.mtx --csv csv/tc/edgeW3/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":146.67674255371094,"graph_name":"great-britain_osm.edgeW3","num-triangles":0,"run-time":1.1748351871967315,"sort-time":952.5504150390625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/write_reorder2_great-britain_osm.mtx --csv csv/tc/write_reorder2/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":146.46578979492188,"graph_name":"write_reorder2_great-britain_osm","num-triangles":0,"run-time":1.1815935909748077,"sort-time":915.4774780273438}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.mtx.RCM.mtx --json csv/tc/RCM/great-britain_osm.csv
+Error: input matrix must be symmetric
+{"M":16313034,"N":7733822,"convert-time":142.4373779296875,"graph_name":"great-britain_osm.mtx.RCM","num-triangles":0,"run-time":1.1533311784267426,"sort-time":862.276611328125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.rand.mtx --csv csv/tc/rand/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":506.0474853515625,"graph_name":"road_usa.rand","num-triangles":0,"run-time":10.988032054901122,"sort-time":7653.1025390625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.hub.mtx --csv csv/tc/hub/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":496.0563049316406,"graph_name":"road_usa.hub","num-triangles":0,"run-time":10.986188793182373,"sort-time":3279.11328125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.chub.mtx --csv csv/tc/chub/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":504.86273193359375,"graph_name":"road_usa.chub","num-triangles":0,"run-time":10.854707717895508,"sort-time":3460.9970703125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.deg.mtx --csv csv/tc/deg/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":502.05902099609375,"graph_name":"road_usa.deg","num-triangles":0,"run-time":10.98137617111206,"sort-time":3264.2509765625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.gorder.mtx --csv csv/tc/gorder/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":522.6793212890625,"graph_name":"road_usa.gorder","num-triangles":0,"run-time":4.248678207397461,"sort-time":3347.346435546875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.edgeW3.mtx --csv csv/tc/edgeW3/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":507.2680969238281,"graph_name":"road_usa.edgeW3","num-triangles":0,"run-time":4.137983942031861,"sort-time":4533.51416015625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/write_reorder2_road_usa.mtx --csv csv/tc/write_reorder2/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":532.990966796875,"graph_name":"write_reorder2_road_usa","num-triangles":0,"run-time":4.261785507202148,"sort-time":4952.9375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.mtx.RCM.mtx --json csv/tc/RCM/road_usa.csv
+Error: input matrix must be symmetric
+{"M":57708624,"N":23947347,"convert-time":528.60107421875,"graph_name":"road_usa.mtx.RCM","num-triangles":0,"run-time":4.0904703617095945,"sort-time":4223.33642578125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.rand.mtx --csv csv/tc/rand/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89239674,"N":1048576,"convert-time":893.4266967773438,"graph_name":"kron_g500-logn20.rand","num-triangles":0,"run-time":20729.457421875,"sort-time":12936.82421875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.hub.mtx --csv csv/tc/hub/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89238804,"N":1048576,"convert-time":905.4638061523438,"graph_name":"kron_g500-logn20.hub","num-triangles":0,"run-time":289676.915625,"sort-time":8952.2158203125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.chub.mtx --csv csv/tc/chub/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89238804,"N":1048576,"convert-time":867.8543090820313,"graph_name":"kron_g500-logn20.chub","num-triangles":0,"run-time":23113.08671875,"sort-time":6182.04052734375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.deg.mtx --csv csv/tc/deg/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89238804,"N":795241,"convert-time":913.9824829101563,"graph_name":"kron_g500-logn20.deg","num-triangles":0,"run-time":287848.99375,"sort-time":8747.1376953125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.gorder.mtx --csv csv/tc/gorder/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89238804,"N":1048576,"convert-time":972.3330688476563,"graph_name":"kron_g500-logn20.gorder","num-triangles":0,"run-time":289519.996875,"sort-time":5654.455078125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.edgeW3.mtx --csv csv/tc/edgeW3/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89239674,"N":1048576,"convert-time":913.3168334960938,"graph_name":"kron_g500-logn20.edgeW3","num-triangles":0,"run-time":57153.9390625,"sort-time":13508.4013671875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/write_reorder2_kron_g500-logn20.mtx --csv csv/tc/write_reorder2/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89239674,"N":1048576,"convert-time":867.5451049804688,"graph_name":"write_reorder2_kron_g500-logn20","num-triangles":0,"run-time":28889.0791015625,"sort-time":12024.3740234375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.mtx.RCM.mtx --json csv/tc/RCM/kron_g500-logn20.csv
+Error: input matrix must be symmetric
+{"M":89239674,"N":1048576,"convert-time":905.6901245117188,"graph_name":"kron_g500-logn20.mtx.RCM","num-triangles":0,"run-time":27133.2345703125,"sort-time":9192.734375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.rand.mtx --csv csv/tc/rand/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182082942,"N":2097152,"convert-time":1741.5352783203125,"graph_name":"kron_g500-logn21.rand","num-triangles":0,"run-time":68819.80234375,"sort-time":26883.94921875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.hub.mtx --csv csv/tc/hub/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182081864,"N":2097152,"convert-time":1792.3245849609375,"graph_name":"kron_g500-logn21.hub","num-triangles":0,"run-time":736261.15625,"sort-time":18806.62109375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.chub.mtx --csv csv/tc/chub/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182081864,"N":2097152,"convert-time":1746.255859375,"graph_name":"kron_g500-logn21.chub","num-triangles":0,"run-time":69360.87890625,"sort-time":12843.4482421875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.deg.mtx --csv csv/tc/deg/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182081864,"N":1544087,"convert-time":1735.7169189453125,"graph_name":"kron_g500-logn21.deg","num-triangles":0,"run-time":730556.6875,"sort-time":18093.572265625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.gorder.mtx --csv csv/tc/gorder/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182081864,"N":2097152,"convert-time":1803.5926513671875,"graph_name":"kron_g500-logn21.gorder","num-triangles":0,"run-time":736663.425,"sort-time":11530.7021484375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.edgeW3.mtx --csv csv/tc/edgeW3/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182082942,"N":2097152,"convert-time":1806.792724609375,"graph_name":"kron_g500-logn21.edgeW3","num-triangles":0,"run-time":136959.0171875,"sort-time":27960.162109375}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/write_reorder2_kron_g500-logn21.mtx --csv csv/tc/write_reorder2/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182082942,"N":2097152,"convert-time":1755.209716796875,"graph_name":"write_reorder2_kron_g500-logn21","num-triangles":0,"run-time":108534.5890625,"sort-time":26179.6953125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.mtx.RCM.mtx --json csv/tc/RCM/kron_g500-logn21.csv
+Error: input matrix must be symmetric
+{"M":182082942,"N":2097152,"convert-time":1821.201416015625,"graph_name":"kron_g500-logn21.mtx.RCM","num-triangles":0,"run-time":78754.7609375,"sort-time":21144.53125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.rand.mtx --csv csv/tc/rand/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":212698418,"N":2997166,"convert-time":2003.8656005859375,"graph_name":"soc-orkut.rand","num-triangles":0,"run-time":1880.1628295898438,"sort-time":29961.173828125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.hub.mtx --csv csv/tc/hub/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":1959.314453125,"graph_name":"soc-orkut.hub","num-triangles":0,"run-time":11748.406640625,"sort-time":26840.142578125}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.chub.mtx --csv csv/tc/chub/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":0,"N":1,"convert-time":0.9820160269737244,"graph_name":"soc-orkut.chub","num-triangles":0,"run-time":0.36567039638757703,"sort-time":0.005119999870657921}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.deg.mtx --csv csv/tc/deg/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":1957.3155517578125,"graph_name":"soc-orkut.deg","num-triangles":0,"run-time":11857.92763671875,"sort-time":27270.998046875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.gorder.mtx --csv csv/tc/gorder/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":106349209,"N":2997166,"convert-time":1065.1832275390625,"graph_name":"soc-orkut.gorder","num-triangles":0,"run-time":255.1033920288086,"sort-time":7160.326171875}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.edgeW3.mtx --csv csv/tc/edgeW3/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":0,"N":1,"convert-time":0.971776008605957,"graph_name":"soc-orkut.edgeW3","num-triangles":0,"run-time":0.3559424113482237,"sort-time":0.005119999870657921}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/write_reorder2_soc-orkut.mtx --csv csv/tc/write_reorder2/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":212698418,"N":2997166,"convert-time":1962.3741455078125,"graph_name":"write_reorder2_soc-orkut","num-triangles":0,"run-time":6601.683349609375,"sort-time":22725.00390625}
+./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.mtx.RCM.mtx --json csv/tc/RCM/soc-orkut.csv
+Error: input matrix must be symmetric
+{"M":212698418,"N":2997166,"convert-time":2078.202880859375,"graph_name":"soc-orkut.mtx.RCM","num-triangles":0,"run-time":2982.8329345703123,"sort-time":26103.0078125}
