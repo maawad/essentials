@@ -1,1 +1,1 @@
-{"M":89239674,"N":1048576,"graph_name":"write_reorder2_kron_g500-logn20","run-time":72.303564453125}
+{"M":89239674,"N":1048576,"convert-time":941.0682983398438,"graph_name":"write_reorder2_kron_g500-logn20","run-time":49.45059814453125,"sort-time":12418.18359375}
