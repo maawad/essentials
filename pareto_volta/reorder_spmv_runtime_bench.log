@@ -1,0 +1,204 @@
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.rand.mtx --csv csv/spmv/rand/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777216,"convert-time":3298.705322265625,"graph_name":"rgg_n_2_24_s0.rand","run-time":47.65593566894531,"sort-time":56603.15234375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.hub.mtx --csv csv/spmv/hub/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777216,"convert-time":3293.81689453125,"graph_name":"rgg_n_2_24_s0.hub","run-time":44.43535385131836,"sort-time":41205.70703125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.deg.mtx --csv csv/spmv/deg/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777215,"convert-time":3265.67431640625,"graph_name":"rgg_n_2_24_s0.deg","run-time":43.7234691619873,"sort-time":42073.3515625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.gorder.mtx --csv csv/spmv/gorder/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777216,"convert-time":3265.282958984375,"graph_name":"rgg_n_2_24_s0.gorder","run-time":6.780415964126587,"sort-time":35444.0625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/write_reorder2_rgg_n_2_24_s0.mtx --csv csv/spmv/write_reorder2/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777216,"convert-time":3259.87841796875,"graph_name":"write_reorder2_rgg_n_2_24_s0","run-time":8.9668607711792,"sort-time":50476.94140625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_24_s0/rgg_n_2_24_s0.mtx.RCM.mtx --json csv/spmv/RCM/rgg_n_2_24_s0.csv
+{"M":265114400,"N":16777216,"convert-time":3224.86181640625,"graph_name":"rgg_n_2_24_s0.mtx.RCM","run-time":6.6420735836029055,"sort-time":44829.46484375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.rand.mtx --csv csv/spmv/rand/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388608,"convert-time":1526.5361328125,"graph_name":"rgg_n_2_23_s0.rand","run-time":18.98598403930664,"sort-time":25489.693359375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.hub.mtx --csv csv/spmv/hub/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388608,"convert-time":1521.2728271484375,"graph_name":"rgg_n_2_23_s0.hub","run-time":17.50036506652832,"sort-time":18197.27734375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.deg.mtx --csv csv/spmv/deg/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388607,"convert-time":1535.23095703125,"graph_name":"rgg_n_2_23_s0.deg","run-time":17.150361633300783,"sort-time":18478.578125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.gorder.mtx --csv csv/spmv/gorder/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388608,"convert-time":1523.23486328125,"graph_name":"rgg_n_2_23_s0.gorder","run-time":3.337625575065613,"sort-time":15282.591796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/write_reorder2_rgg_n_2_23_s0.mtx --csv csv/spmv/write_reorder2/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388608,"convert-time":1548.5880126953125,"graph_name":"write_reorder2_rgg_n_2_23_s0","run-time":3.413913607597351,"sort-time":23147.931640625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_23_s0/rgg_n_2_23_s0.mtx.RCM.mtx --json csv/spmv/RCM/rgg_n_2_23_s0.csv
+{"M":127002786,"N":8388608,"convert-time":1546.4017333984375,"graph_name":"rgg_n_2_23_s0.mtx.RCM","run-time":3.251097631454468,"sort-time":19284.052734375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.rand.mtx --csv csv/spmv/rand/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194304,"convert-time":733.338623046875,"graph_name":"rgg_n_2_22_s0.rand","run-time":6.6294783592224125,"sort-time":11384.041015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.hub.mtx --csv csv/spmv/hub/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194304,"convert-time":732.6248779296875,"graph_name":"rgg_n_2_22_s0.hub","run-time":5.857996797561645,"sort-time":8032.76806640625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.deg.mtx --csv csv/spmv/deg/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194301,"convert-time":735.2176513671875,"graph_name":"rgg_n_2_22_s0.deg","run-time":5.697740888595581,"sort-time":8103.529296875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.gorder.mtx --csv csv/spmv/gorder/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194304,"convert-time":741.3851928710938,"graph_name":"rgg_n_2_22_s0.gorder","run-time":1.9570688009262085,"sort-time":6751.85888671875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/write_reorder2_rgg_n_2_22_s0.mtx --csv csv/spmv/write_reorder2/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194304,"convert-time":728.0824584960938,"graph_name":"write_reorder2_rgg_n_2_22_s0","run-time":1.8511871933937072,"sort-time":10280.787109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/rgg_n_2_22_s0/rgg_n_2_22_s0.mtx.RCM.mtx --json csv/spmv/RCM/rgg_n_2_22_s0.csv
+{"M":60718396,"N":4194304,"convert-time":739.9188232421875,"graph_name":"rgg_n_2_22_s0.mtx.RCM","run-time":1.7779711961746216,"sort-time":8539.8701171875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.rand.mtx --csv csv/spmv/rand/hollywood-2009.csv
+{"M":113891327,"N":1139905,"convert-time":1428.2403564453125,"graph_name":"hollywood-2009.rand","run-time":3.818393516540527,"sort-time":23131.455078125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.hub.mtx --csv csv/spmv/hub/hollywood-2009.csv
+{"M":112751422,"N":1139905,"convert-time":1407.3057861328125,"graph_name":"hollywood-2009.hub","run-time":3.678105616569519,"sort-time":18322.9765625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.deg.mtx --csv csv/spmv/deg/hollywood-2009.csv
+{"M":112751422,"N":1107243,"convert-time":1381.117919921875,"graph_name":"hollywood-2009.deg","run-time":3.432038426399231,"sort-time":18303.451171875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.gorder.mtx --csv csv/spmv/gorder/hollywood-2009.csv
+{"M":112751422,"N":1139905,"convert-time":1394.7965087890625,"graph_name":"hollywood-2009.gorder","run-time":2.9289472103118896,"sort-time":13907.7998046875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/write_reorder2_hollywood-2009.mtx --csv csv/spmv/write_reorder2/hollywood-2009.csv
+{"M":113891327,"N":1139905,"convert-time":1400.4541015625,"graph_name":"write_reorder2_hollywood-2009","run-time":3.0622719526290894,"sort-time":21564.041015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/hollywood-2009/hollywood-2009.mtx.RCM.mtx --json csv/spmv/RCM/hollywood-2009.csv
+{"M":113891327,"N":1139905,"convert-time":1422.172119140625,"graph_name":"hollywood-2009.mtx.RCM","run-time":2.868326425552368,"sort-time":16800.17578125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.rand.mtx --csv csv/spmv/rand/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":12.569600105285645,"graph_name":"coAuthorsCiteseer.rand","run-time":0.3889152079820633,"sort-time":225.2410888671875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.hub.mtx --csv csv/spmv/hub/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":11.323391914367676,"graph_name":"coAuthorsCiteseer.hub","run-time":0.3761151984333992,"sort-time":147.09555053710938}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.deg.mtx --csv csv/spmv/deg/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":11.968511581420898,"graph_name":"coAuthorsCiteseer.deg","run-time":0.3804160110652447,"sort-time":141.7205810546875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.gorder.mtx --csv csv/spmv/gorder/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":11.460607528686523,"graph_name":"coAuthorsCiteseer.gorder","run-time":0.3612672105431557,"sort-time":114.6460189819336}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/write_reorder2_coAuthorsCiteseer.mtx --csv csv/spmv/write_reorder2/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":11.33670425415039,"graph_name":"write_reorder2_coAuthorsCiteseer","run-time":0.368022408336401,"sort-time":188.2777557373047}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsCiteseer/coAuthorsCiteseer.mtx.RCM.mtx --json csv/spmv/RCM/coAuthorsCiteseer.csv
+{"M":1628268,"N":227320,"convert-time":11.35103988647461,"graph_name":"coAuthorsCiteseer.mtx.RCM","run-time":0.37150719538331034,"sort-time":164.39808654785156}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.rand.mtx --csv csv/spmv/rand/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":14.185471534729004,"graph_name":"coAuthorsDBLP.rand","run-time":0.3946495920419693,"sort-time":277.46917724609375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.hub.mtx --csv csv/spmv/hub/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":13.841407775878906,"graph_name":"coAuthorsDBLP.hub","run-time":0.3871743991971016,"sort-time":168.732666015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.deg.mtx --csv csv/spmv/deg/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":14.071807861328125,"graph_name":"coAuthorsDBLP.deg","run-time":0.3907584071159363,"sort-time":169.0828857421875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.gorder.mtx --csv csv/spmv/gorder/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":14.284799575805664,"graph_name":"coAuthorsDBLP.gorder","run-time":0.38051839768886564,"sort-time":135.24172973632813}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/write_reorder2_coAuthorsDBLP.mtx --csv csv/spmv/write_reorder2/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":14.094335556030273,"graph_name":"write_reorder2_coAuthorsDBLP","run-time":0.37539840340614317,"sort-time":229.49171447753906}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/coAuthorsDBLP/coAuthorsDBLP.mtx.RCM.mtx --json csv/spmv/RCM/coAuthorsDBLP.csv
+{"M":1955352,"N":299067,"convert-time":13.925375938415527,"graph_name":"coAuthorsDBLP.mtx.RCM","run-time":0.37160959392786025,"sort-time":202.27174377441406}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.rand.mtx --csv csv/spmv/rand/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1245.5731201171875,"graph_name":"delaunay_n24.rand","run-time":18.68144645690918,"sort-time":19691.9765625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.hub.mtx --csv csv/spmv/hub/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1255.11572265625,"graph_name":"delaunay_n24.hub","run-time":18.54453754425049,"sort-time":13830.78515625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.deg.mtx --csv csv/spmv/deg/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1248.4781494140625,"graph_name":"delaunay_n24.deg","run-time":18.440499305725098,"sort-time":13602.90625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.gorder.mtx --csv csv/spmv/gorder/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1247.0445556640625,"graph_name":"delaunay_n24.gorder","run-time":3.3373183965682984,"sort-time":12531.49609375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/write_reorder2_delaunay_n24.mtx --csv csv/spmv/write_reorder2/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1249.3087158203125,"graph_name":"write_reorder2_delaunay_n24","run-time":3.4144256114959717,"sort-time":16581.892578125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n24/delaunay_n24.mtx.RCM.mtx --json csv/spmv/RCM/delaunay_n24.csv
+{"M":100663202,"N":16777216,"convert-time":1246.712890625,"graph_name":"delaunay_n24.mtx.RCM","run-time":3.460505652427673,"sort-time":15010.4599609375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.rand.mtx --csv csv/spmv/rand/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":616.005615234375,"graph_name":"delaunay_n23.rand","run-time":10.2373375415802,"sort-time":9233.2353515625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.hub.mtx --csv csv/spmv/hub/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":630.9837036132813,"graph_name":"delaunay_n23.hub","run-time":8.084992027282714,"sort-time":6298.21240234375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.deg.mtx --csv csv/spmv/deg/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":617.617431640625,"graph_name":"delaunay_n23.deg","run-time":8.026931238174438,"sort-time":6156.0966796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.gorder.mtx --csv csv/spmv/gorder/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":611.8994140625,"graph_name":"delaunay_n23.gorder","run-time":1.8889728307723999,"sort-time":5673.6591796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/write_reorder2_delaunay_n23.mtx --csv csv/spmv/write_reorder2/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":604.6689453125,"graph_name":"write_reorder2_delaunay_n23","run-time":1.9051520228385925,"sort-time":7675.0283203125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n23/delaunay_n23.mtx.RCM.mtx --json csv/spmv/RCM/delaunay_n23.csv
+{"M":50331568,"N":8388608,"convert-time":615.2294311523438,"graph_name":"delaunay_n23.mtx.RCM","run-time":1.8636799812316895,"sort-time":6971.08154296875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.rand.mtx --csv csv/spmv/rand/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":308.5086669921875,"graph_name":"delaunay_n22.rand","run-time":3.1415296316146852,"sort-time":4335.41943359375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.hub.mtx --csv csv/spmv/hub/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":303.27294921875,"graph_name":"delaunay_n22.hub","run-time":3.370700812339783,"sort-time":2875.800537109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.deg.mtx --csv csv/spmv/deg/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":303.39892578125,"graph_name":"delaunay_n22.deg","run-time":3.057766389846802,"sort-time":2870.760498046875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.gorder.mtx --csv csv/spmv/gorder/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":304.75469970703125,"graph_name":"delaunay_n22.gorder","run-time":1.1509760081768037,"sort-time":2594.272216796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/write_reorder2_delaunay_n22.mtx --csv csv/spmv/write_reorder2/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":305.6752624511719,"graph_name":"write_reorder2_delaunay_n22","run-time":1.1792384088039398,"sort-time":3595.832275390625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/delaunay_n22/delaunay_n22.mtx.RCM.mtx --json csv/spmv/RCM/delaunay_n22.csv
+{"M":25165738,"N":4194304,"convert-time":304.247802734375,"graph_name":"delaunay_n22.mtx.RCM","run-time":1.1077632069587708,"sort-time":3189.34521484375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.rand.mtx --csv csv/spmv/rand/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":220.76211547851563,"graph_name":"great-britain_osm.rand","run-time":3.1175679922103883,"sort-time":2701.2587890625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.hub.mtx --csv csv/spmv/hub/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":220.85427856445313,"graph_name":"great-britain_osm.hub","run-time":3.072000026702881,"sort-time":1521.5892333984375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.deg.mtx --csv csv/spmv/deg/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":219.69407653808594,"graph_name":"great-britain_osm.deg","run-time":3.0275583982467653,"sort-time":1517.655029296875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.gorder.mtx --csv csv/spmv/gorder/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":221.1041259765625,"graph_name":"great-britain_osm.gorder","run-time":1.1757568001747132,"sort-time":1498.420166015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/write_reorder2_great-britain_osm.mtx --csv csv/spmv/write_reorder2/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":218.91378784179688,"graph_name":"write_reorder2_great-britain_osm","run-time":1.484697598218918,"sort-time":1683.541015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/great-britain_osm/great-britain_osm.mtx.RCM.mtx --json csv/spmv/RCM/great-britain_osm.csv
+{"M":16313034,"N":7733822,"convert-time":219.43399047851563,"graph_name":"great-britain_osm.mtx.RCM","run-time":1.2323840141296387,"sort-time":1702.1051025390625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.rand.mtx --csv csv/spmv/rand/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":806.9468383789063,"graph_name":"road_usa.rand","run-time":12.347596836090087,"sort-time":11659.6015625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.hub.mtx --csv csv/spmv/hub/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":764.7283325195313,"graph_name":"road_usa.hub","run-time":12.115148735046386,"sort-time":6944.57568359375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.deg.mtx --csv csv/spmv/deg/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":782.7814331054688,"graph_name":"road_usa.deg","run-time":12.217036724090576,"sort-time":6756.52294921875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.gorder.mtx --csv csv/spmv/gorder/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":770.3377685546875,"graph_name":"road_usa.gorder","run-time":3.041484761238098,"sort-time":6518.48486328125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/write_reorder2_road_usa.mtx --csv csv/spmv/write_reorder2/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":767.3046875,"graph_name":"write_reorder2_road_usa","run-time":3.0131200313568116,"sort-time":8113.69677734375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/road_usa/road_usa.mtx.RCM.mtx --json csv/spmv/RCM/road_usa.csv
+{"M":57708624,"N":23947347,"convert-time":769.1090087890625,"graph_name":"road_usa.mtx.RCM","run-time":2.8869631767272947,"sort-time":7710.51025390625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/arabic-2005.rand.mtx --csv csv/spmv/rand/arabic-2005.csv
+{"M":639999458,"N":22744080,"convert-time":7879.81005859375,"graph_name":"arabic-2005.rand","run-time":93.66681671142578,"sort-time":139885.375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/arabic-2005.hub.mtx --csv csv/spmv/hub/arabic-2005.csv
+{"M":631153669,"N":22744080,"convert-time":8567.9453125,"graph_name":"arabic-2005.hub","run-time":40.82001876831055,"sort-time":116434.265625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/arabic-2005.deg.mtx --csv csv/spmv/deg/arabic-2005.csv
+{"M":639999458,"N":22744080,"convert-time":7824.130859375,"graph_name":"arabic-2005.deg","run-time":15.633203220367431,"sort-time":104067.0}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/arabic-2005.gorder.mtx --csv csv/spmv/gorder/arabic-2005.csv
+{"M":631153669,"N":22744080,"convert-time":7693.4443359375,"graph_name":"arabic-2005.gorder","run-time":13.545676803588867,"sort-time":95618.9765625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/write_reorder2_arabic-2005.mtx --csv csv/spmv/write_reorder2/arabic-2005.csv
+{"M":639999458,"N":22744080,"convert-time":8377.912109375,"graph_name":"write_reorder2_arabic-2005","run-time":13.781094551086426,"sort-time":114406.4296875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/arabic-2005/arabic-2005.mtx.RCM.mtx --json csv/spmv/RCM/arabic-2005.csv
+{"M":639999458,"N":22744080,"convert-time":7951.638671875,"graph_name":"arabic-2005.mtx.RCM","run-time":13.775974369049072,"sort-time":107320.8203125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/soc-LiveJournal1.rand.mtx --csv csv/spmv/rand/soc-LiveJournal1.csv
+{"M":68993773,"N":4847571,"convert-time":882.7637939453125,"graph_name":"soc-LiveJournal1.rand","run-time":7.735087966918945,"sort-time":15915.4375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/soc-LiveJournal1.hub.mtx --csv csv/spmv/hub/soc-LiveJournal1.csv
+{"M":68475391,"N":4847571,"convert-time":871.3850708007813,"graph_name":"soc-LiveJournal1.hub","run-time":4.888473558425903,"sort-time":10001.12109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/soc-LiveJournal1.deg.mtx --csv csv/spmv/deg/soc-LiveJournal1.csv
+{"M":68993773,"N":4847571,"convert-time":870.5494995117188,"graph_name":"soc-LiveJournal1.deg","run-time":4.000051212310791,"sort-time":13211.138671875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/soc-LiveJournal1.gorder.mtx --csv csv/spmv/gorder/soc-LiveJournal1.csv
+{"M":68475391,"N":4846608,"convert-time":867.8133544921875,"graph_name":"soc-LiveJournal1.gorder","run-time":3.00021755695343,"sort-time":8113.3896484375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/write_reorder2_soc-LiveJournal1.mtx --csv csv/spmv/write_reorder2/soc-LiveJournal1.csv
+{"M":68993773,"N":4847571,"convert-time":874.7468872070313,"graph_name":"write_reorder2_soc-LiveJournal1","run-time":3.468185567855835,"sort-time":14188.001953125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-LiveJournal1/soc-LiveJournal1.mtx.RCM.mtx --json csv/spmv/RCM/soc-LiveJournal1.csv
+{"M":68993773,"N":4847571,"convert-time":874.6281127929688,"graph_name":"soc-LiveJournal1.mtx.RCM","run-time":3.2930816173553468,"sort-time":11907.3701171875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/ljournal-2008.rand.mtx --csv csv/spmv/rand/ljournal-2008.csv
+{"M":79023142,"N":5363260,"convert-time":1016.2288818359375,"graph_name":"ljournal-2008.rand","run-time":9.24180498123169,"sort-time":17020.435546875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/ljournal-2008.hub.mtx --csv csv/spmv/hub/ljournal-2008.csv
+{"M":77991514,"N":5363260,"convert-time":979.3873901367188,"graph_name":"ljournal-2008.hub","run-time":5.605171203613281,"sort-time":11908.7353515625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/ljournal-2008.deg.mtx --csv csv/spmv/deg/ljournal-2008.csv
+{"M":79023142,"N":5363260,"convert-time":995.4662475585938,"graph_name":"ljournal-2008.deg","run-time":4.104396724700928,"sort-time":14059.767578125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/ljournal-2008.gorder.mtx --csv csv/spmv/gorder/ljournal-2008.csv
+{"M":77991514,"N":5363260,"convert-time":969.3132934570313,"graph_name":"ljournal-2008.gorder","run-time":3.3291264533996583,"sort-time":9217.8759765625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/write_reorder2_ljournal-2008.mtx --csv csv/spmv/write_reorder2/ljournal-2008.csv
+{"M":79023142,"N":5363260,"convert-time":983.4557495117188,"graph_name":"write_reorder2_ljournal-2008","run-time":3.7778432369232178,"sort-time":15768.609375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/ljournal-2008/ljournal-2008.mtx.RCM.mtx --json csv/spmv/RCM/ljournal-2008.csv
+{"M":79023142,"N":5363260,"convert-time":980.0325317382813,"graph_name":"ljournal-2008.mtx.RCM","run-time":3.7659647703170775,"sort-time":13829.6484375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.rand.mtx --csv csv/spmv/rand/kron_g500-logn20.csv
+{"M":89239674,"N":1048576,"convert-time":1157.496826171875,"graph_name":"kron_g500-logn20.rand","run-time":3.0148607730865478,"sort-time":19683.205078125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.hub.mtx --csv csv/spmv/hub/kron_g500-logn20.csv
+{"M":89238804,"N":1048576,"convert-time":1148.7498779296875,"graph_name":"kron_g500-logn20.hub","run-time":2.664857602119446,"sort-time":15349.35546875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.deg.mtx --csv csv/spmv/deg/kron_g500-logn20.csv
+{"M":89238804,"N":795241,"convert-time":1143.867431640625,"graph_name":"kron_g500-logn20.deg","run-time":2.4988672018051146,"sort-time":15270.4599609375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.gorder.mtx --csv csv/spmv/gorder/kron_g500-logn20.csv
+{"M":89238804,"N":1048576,"convert-time":1153.0875244140625,"graph_name":"kron_g500-logn20.gorder","run-time":2.507366394996643,"sort-time":10969.41796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/write_reorder2_kron_g500-logn20.mtx --csv csv/spmv/write_reorder2/kron_g500-logn20.csv
+{"M":89239674,"N":1048576,"convert-time":1133.7481689453125,"graph_name":"write_reorder2_kron_g500-logn20","run-time":2.674380826950073,"sort-time":19209.455078125}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn20/kron_g500-logn20.mtx.RCM.mtx --json csv/spmv/RCM/kron_g500-logn20.csv
+{"M":89239674,"N":1048576,"convert-time":1136.5028076171875,"graph_name":"kron_g500-logn20.mtx.RCM","run-time":2.487193536758423,"sort-time":14341.412109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.rand.mtx --csv csv/spmv/rand/kron_g500-logn21.csv
+{"M":182082942,"N":2097152,"convert-time":2306.888671875,"graph_name":"kron_g500-logn21.rand","run-time":8.571494388580323,"sort-time":42246.1796875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.hub.mtx --csv csv/spmv/hub/kron_g500-logn21.csv
+{"M":182081864,"N":2097152,"convert-time":2320.1884765625,"graph_name":"kron_g500-logn21.hub","run-time":5.7986047744750975,"sort-time":33357.3984375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.deg.mtx --csv csv/spmv/deg/kron_g500-logn21.csv
+{"M":182081864,"N":1544087,"convert-time":2306.472900390625,"graph_name":"kron_g500-logn21.deg","run-time":5.330124759674073,"sort-time":33505.46484375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.gorder.mtx --csv csv/spmv/gorder/kron_g500-logn21.csv
+{"M":182081864,"N":2097152,"convert-time":2306.169921875,"graph_name":"kron_g500-logn21.gorder","run-time":5.328179168701172,"sort-time":24625.62109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/write_reorder2_kron_g500-logn21.mtx --csv csv/spmv/write_reorder2/kron_g500-logn21.csv
+{"M":182082942,"N":2097152,"convert-time":2300.2705078125,"graph_name":"write_reorder2_kron_g500-logn21","run-time":5.617766380310059,"sort-time":41543.26171875}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.mtx.RCM.mtx --json csv/spmv/RCM/kron_g500-logn21.csv
+{"M":182082942,"N":2097152,"convert-time":2320.81396484375,"graph_name":"kron_g500-logn21.mtx.RCM","run-time":5.040025615692139,"sort-time":31588.037109375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.rand.mtx --csv csv/spmv/rand/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":2618.08544921875,"graph_name":"soc-orkut.rand","run-time":16.407859230041502,"sort-time":47220.1640625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.hub.mtx --csv csv/spmv/hub/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":2623.859619140625,"graph_name":"soc-orkut.hub","run-time":11.984281539916992,"sort-time":43578.3359375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.deg.mtx --csv csv/spmv/deg/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":2665.75146484375,"graph_name":"soc-orkut.deg","run-time":11.137638473510743,"sort-time":44553.02734375}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.gorder.mtx --csv csv/spmv/gorder/soc-orkut.csv
+{"M":106349209,"N":2997166,"convert-time":1295.3343505859375,"graph_name":"soc-orkut.gorder","run-time":4.368179178237915,"sort-time":12871.65625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/write_reorder2_soc-orkut.mtx --csv csv/spmv/write_reorder2/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":2639.930419921875,"graph_name":"write_reorder2_soc-orkut","run-time":8.546406316757203,"sort-time":40691.265625}
+./build/bin/spmv /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.mtx.RCM.mtx --json csv/spmv/RCM/soc-orkut.csv
+{"M":212698418,"N":2997166,"convert-time":2623.12451171875,"graph_name":"soc-orkut.mtx.RCM","run-time":7.6220416069030765,"sort-time":40268.34375}
