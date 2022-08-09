@@ -15,8 +15,9 @@
 #include <gunrock/algorithms/algorithms.hxx>
 #include <sys/time.h>
 
-/*double getTime() {                                                         struct timeval tv;                                                      gettimeofday(&tv, 0);                                                   return tv.tv_sec * 1000.0 + tv.tv_usec / 1000.0;
-  } */ 
+/*double getTime() { struct timeval tv; gettimeofday(&tv, 0); return tv.tv_sec *
+  1000.0 + tv.tv_usec / 1000.0;
+  } */
 
 namespace gunrock {
 namespace spmv {
@@ -93,7 +94,7 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
                     edge_t const& edge,        // edge (row ↦ column)
                     weight_t const& weight     // weight (nonzero).
                     ) -> bool {
-      //y[source] += weight * x[neighbor];
+      // y[source] += weight * x[neighbor];
       math::atomic::add(&(y[source]), weight * x[neighbor]);
       return false;  // ignored.
     };
@@ -167,7 +168,7 @@ float run(graph_t& G,
 
   enactor_type enactor(&problem, context, props);
   auto t2 = getTime();
-  printf("Run %f \n",t2-t1);
+  // printf("Run %f \n",t2-t1);
   return enactor.enact();
   // </boiler-plate>
 }

@@ -11,6 +11,7 @@
 #pragma once
 
 #include <gunrock/algorithms/algorithms.hxx>
+#include <gunrock/util/nvtx.hpp>
 
 namespace gunrock {
 namespace sssp {
@@ -106,8 +107,7 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
     auto visited = P->visited.data().get();
 
     auto iteration = this->iteration;
-
-    auto shortest_path = [distances, single_source] __host__ __device__(
+    auto shortest_path = [distances, single_source] __device__(
                              vertex_t const& source,    // ... source
                              vertex_t const& neighbor,  // neighbor
                              edge_t const& edge,        // edge
@@ -117,9 +117,14 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
       weight_t distance_to_neighbor = source_distance + weight;
 
       // Check if the destination node has been claimed as someone's child
-      weight_t recover_distance =
-          math::atomic::min(&(distances[neighbor]), distance_to_neighbor);
+      auto recover_distance = distances[neighbor];
+      if (distance_to_neighbor < recover_distance) {
+        recover_distance =
+            math::atomic::min(&(distances[neighbor]), distance_to_neighbor);
+      }
 
+      // auto recover_distance =
+      //     math::atomic::min(&(distances[neighbor]), distance_to_neighbor);
       return (distance_to_neighbor < recover_distance);
     };
 
@@ -136,7 +141,7 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
     };
 
     // Execute advance operator on the provided lambda
-    operators::advance::execute<operators::load_balance_t::block_mapped>(
+    operators::advance::execute<operators::load_balance_t::merge_path>(
         G, E, shortest_path, context);
 
     // Execute filter operator on the provided lambda
