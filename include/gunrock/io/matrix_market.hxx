@@ -21,6 +21,8 @@
 #include <gunrock/memory.hxx>
 #include <gunrock/error.hxx>
 
+#include <thrust/sort.h>
+
 namespace gunrock {
 namespace io {
 
@@ -150,12 +152,12 @@ struct matrix_market_t {
       for (vertex_t i = 0; i < num_nonzeros; ++i) {
         std::size_t row_index{0}, col_index{0};
         auto num_assigned = fscanf(file, " %zu %zu \n", &row_index, &col_index);
-        error::throw_if_exception(num_assigned != 2,
-                                  "Could not read edge from market file");
-        error::throw_if_exception(row_index == 0,
-                                  "Market file is zero-indexed");
-        error::throw_if_exception(col_index == 0,
-                                  "Market file is zero-indexed");
+        // error::throw_if_exception(num_assigned != 2,
+        //                           "Could not read edge from market file");
+        // error::throw_if_exception(row_index == 0,
+        //                           "Market file is zero-indexed");
+        // error::throw_if_exception(col_index == 0,
+        //                           "Market file is zero-indexed");
         // set and adjust from 1-based to 0-based indexing
         coo.row_indices[i] = (vertex_t)row_index - 1;
         coo.column_indices[i] = (vertex_t)col_index - 1;
@@ -175,12 +177,13 @@ struct matrix_market_t {
         auto num_assigned =
             fscanf(file, " %zu %zu %lf \n", &row_index, &col_index, &weight);
 
-        error::throw_if_exception(
-            num_assigned != 3, "Could not read weighted edge from market file");
-        error::throw_if_exception(row_index == 0,
-                                  "Market file is zero-indexed");
-        error::throw_if_exception(col_index == 0,
-                                  "Market file is zero-indexed");
+        // error::throw_if_exception(
+        //     num_assigned != 3, "Could not read weighted edge from market
+        //     file");
+        // error::throw_if_exception(row_index == 0,
+        //                           "Market file is zero-indexed");
+        // error::throw_if_exception(col_index == 0,
+        //                           "Market file is zero-indexed");
 
         coo.row_indices[i] = (vertex_t)row_index - 1;
         coo.column_indices[i] = (vertex_t)col_index - 1;
@@ -236,7 +239,7 @@ struct matrix_market_t {
 
     fclose(file);
 
-    return coo;
+    return std::move(coo);
   }
 };
 
