@@ -6,7 +6,7 @@ using namespace gunrock;
 using namespace memory;
 
 void test_pr(int num_arguments, char** argument_array) {
-  if (num_arguments != 2) {
+  if (num_arguments != 3) {
     std::cerr << "usage: ./bin/<program-name> filename.mtx" << std::endl;
     exit(1);
   }
@@ -76,7 +76,7 @@ void test_pr(int num_arguments, char** argument_array) {
   // --
   // GPU Run
 
-  const int num_experiments = 10;
+  const int num_experiments = std::atoi(argument_array[2]);
   double gpu_elapsed = 0.0;
   for (auto exp = 0; exp < num_experiments; exp++) {
     thrust::device_vector<weight_t> p(n_vertices);

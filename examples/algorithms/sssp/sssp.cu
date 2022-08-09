@@ -7,7 +7,7 @@ using namespace gunrock;
 using namespace memory;
 
 void test_sssp(int num_arguments, char** argument_array) {
-  if (num_arguments != 2) {
+  if (num_arguments != 3) {
     std::cerr << "usage: ./bin/<program-name> filename.mtx" << std::endl;
     exit(1);
   }
@@ -89,7 +89,8 @@ void test_sssp(int num_arguments, char** argument_array) {
   //     deleter_t<vertex_t>());
 
   double gpu_elapsed = 0.0;
-  int num_runs = 10;
+  int num_runs = std::atoi(argument_array[2]);
+
   const bool validate = false;
   for (auto i = 0; i < num_runs; i++) {
     thrust::device_vector<weight_t> distances(n_vertices);

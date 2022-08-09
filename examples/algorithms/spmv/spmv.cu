@@ -8,7 +8,7 @@ using namespace gunrock;
 using namespace memory;
 
 void test_spmv(int num_arguments, char** argument_array) {
-  if (num_arguments != 2) {
+  if (num_arguments != 3) {
     std::cerr << "usage: ./bin/<program-name> filename.mtx" << std::endl;
     exit(1);
   }
@@ -73,7 +73,7 @@ void test_spmv(int num_arguments, char** argument_array) {
   // --
   // GPU Run
   double gpu_elapsed = 0.0;
-  int num_runs = 10;
+  int num_runs = std::atoi(argument_array[2]);
 
   for (auto i = 0; i < num_runs; i++) {
     thrust::device_vector<weight_t> x(n_vertices);

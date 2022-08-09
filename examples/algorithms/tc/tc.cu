@@ -15,7 +15,7 @@ struct parameters_t {
   cxxopts::Options options;
   bool validate;
   bool reduce_all_triangles;
-
+  int num_runs;
   /**
    * @brief Construct a new parameters object and parse command line arguments.
    *
@@ -27,12 +27,13 @@ struct parameters_t {
     // Add command line options
     options.add_options()("help", "Print help")(
         "validate", "CPU validation",
-        cxxopts::value<bool>()->default_value("false"))(
-        "m,market", "Matrix file", cxxopts::value<std::string>())(
-        "r,reduce",
-        "Compute a single triangle count for the entire graph (default = "
-        "false)",
-        cxxopts::value<bool>()->default_value("false"));
+        cxxopts::value<bool>()->default_value("false"))             //
+        ("m,market", "Matrix file", cxxopts::value<std::string>())  //
+        ("r,reduce",
+         "Compute a single triangle count for the entire graph (default = "
+         "false)",
+         cxxopts::value<bool>()->default_value("false"))  //
+        ("n,runs", "Number of runs", cxxopts::value<int>());
 
     // Parse command line arguments
     auto result = options.parse(argc, argv);
@@ -44,6 +45,7 @@ struct parameters_t {
     filename = result["market"].as<std::string>();
     validate = result["validate"].as<bool>();
     reduce_all_triangles = result["reduce"].as<bool>();
+    num_runs = result["runs"].as<int>();
   }
 };
 
@@ -77,6 +79,7 @@ void test_tc(int num_arguments, char** argument_array) {
     sort_timer.begin();
     mmatrix.sort();
     sort_time = sort_timer.end();
+    vertex_t single_source = 0;  // rand() % n_vertices;
 
     util::timer_t convert_timer;
     convert_timer.begin();
@@ -109,11 +112,10 @@ void test_tc(int num_arguments, char** argument_array) {
 
   // --
   // GPU Run
-  const int num_experiments = 10;
   double gpu_elapsed = 0.0;
   std::size_t total_triangles_ = 0;
 
-  for (auto exp = 0; exp < num_experiments; exp++) {
+  for (auto exp = 0; exp < params.num_runs; exp++) {
     std::size_t total_triangles = 0;
     thrust::device_vector<count_t> triangles_count(n_vertices, 0);
     util::flush_cache();
@@ -125,7 +127,7 @@ void test_tc(int num_arguments, char** argument_array) {
     gpu_elapsed += exp_gpu_elapsed;
     // std::cout << exp << " :" << exp_gpu_elapsed << std::endl;
   }
-  gpu_elapsed /= double(num_experiments);
+  gpu_elapsed /= double(params.num_runs);
 
   using json = nlohmann::json;
 
