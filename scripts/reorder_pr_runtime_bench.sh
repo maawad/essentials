@@ -35,7 +35,7 @@ NCU_ARGS=""
 NCU_ARGS="${NCU_ARGS} --section MemoryWorkloadAnalysis --section MemoryWorkloadAnalysis_Tables"
 NCU_ARGS="${NCU_ARGS} --replay kernel"
 NCU_ARGS="${NCU_ARGS} --cache-control all"
-NCU_ARGS="${NCU_ARGS} --kernel-name block_mapped_kernel"
+NCU_ARGS="${NCU_ARGS} --profile-from-start no"
 NCU_ARGS="${NCU_ARGS} --apply-rules yes --check-exit-code yes --page raw --log"
 
 EXEC_PATH=${BUILD_DIR}/${BENCHMARK_EXE}

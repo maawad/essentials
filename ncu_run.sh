@@ -24,7 +24,7 @@ NCU_ARGS=""
 NCU_ARGS="${NCU_ARGS} --section ComputeWorkloadAnalysis --section InstructionStats --section LaunchStats --section MemoryWorkloadAnalysis --section MemoryWorkloadAnalysis_Chart --section MemoryWorkloadAnalysis_Deprecated --section MemoryWorkloadAnalysis_Tables --section Occupancy --section SchedulerStats --section SourceCounters --section SpeedOfLight --section SpeedOfLight_RooflineChart --section WarpStateStats"
 NCU_ARGS="${NCU_ARGS} --replay kernel"
 NCU_ARGS="${NCU_ARGS} --cache-control all"
-NCU_ARGS="${NCU_ARGS} --kernel-name block_mapped_kernel"
+NCU_ARGS="${NCU_ARGS} --profile-from-start no"
 NCU_ARGS="${NCU_ARGS} --apply-rules yes --check-exit-code yes --page raw --csv"
 
 
