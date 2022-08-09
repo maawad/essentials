@@ -1,3 +1,10 @@
+*build*/*
+json*/*
+*.zip
+*.log
+*.ncu-rep
+*.svg
+
 # Ignore vscode
 *.vscode*
 
@@ -20,7 +27,7 @@
 
 # Ignore graph dataset files
 *.graph
-*.mtx*
+#*.mtx*
 
 # Ignore tarball
 *.tar.gz

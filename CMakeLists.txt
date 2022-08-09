@@ -73,7 +73,8 @@ set_target_properties(essentials
     CUDA_EXTENSIONS OFF
     CUDA_RESOLVE_DEVICE_SYMBOLS ON
     CUDA_SEPARABLE_COMPILATION ON
-    CUDA_ARCHITECTURES 61 # Set required architecture.
+    #CUDA_ARCHITECTURES 80 # Set required architecture.
+    CUDA_ARCHITECTURES 70 # Set required architecture.
     # CUDA_PTX_COMPILATION ON # Can only be applied to OBJ.
 )
 
@@ -124,6 +125,7 @@ target_link_libraries(essentials
   INTERFACE curand
   INTERFACE cuda
   INTERFACE cusparse
+  INTERFACE nvToolsExt
 )
 
 ####################################################
@@ -158,7 +160,11 @@ set(CUDA_FLAGS
   --expt-extended-lambda
   --expt-relaxed-constexpr
   --use_fast_math
-  --ptxas-options -v
+  # --ptxas-options -v
+  # --ptxas-options -flcm=ca
+  # --ptxas-options -flcm=cg
+  # --ptxas-options -flcm=cs
+  # --ptxas-options -flcm=cv
   --generate-line-info
   $<$<CXX_COMPILER_ID:GNU>:-O3> # Host optimize-level
   # --verbose

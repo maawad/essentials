@@ -15,7 +15,8 @@ BENCHMARK_EXE=${ALGORITHM}
 DATASETS_NAMES=("rgg_n_2_24_s0" "rgg_n_2_23_s0" "rgg_n_2_22_s0"
                 "hollywood-2009" "coAuthorsCiteseer" "coAuthorsDBLP"
                 "delaunay_n24"  "delaunay_n23"  "delaunay_n22"
-                "great-britain_osm" "road_usa" "arabic-2005")
+                "great-britain_osm" "road_usa" "kron_g500-logn20" "kron_g500-logn21"
+                 "soc-orkut")
 
 # "roadNet-CA" missing dataset
 # DATASETS_NAMES=("delaunay_n10")
