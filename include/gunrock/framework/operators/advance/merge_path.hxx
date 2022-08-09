@@ -21,6 +21,9 @@
 #include <moderngpu/kernel_scan.hxx>
 #include <moderngpu/kernel_load_balance.hxx>
 
+//
+#include <cuda_profiler_api.h>
+
 namespace gunrock {
 namespace operators {
 namespace advance {
@@ -108,9 +111,11 @@ void execute(graph_t& G,
   int end = (input_type == advance_io_type_t::graph)
                 ? G.get_number_of_vertices()
                 : input->get_number_of_elements();
+  cudaProfilerStart();
   mgpu::transform_lbs(neighbors_expand, size_of_output,
                       thrust::raw_pointer_cast(segments.data()), end,
                       *(context.mgpu()));
+  cudaProfilerStop();
 }
 }  // namespace merge_path
 }  // namespace advance
