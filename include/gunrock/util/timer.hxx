@@ -12,10 +12,31 @@
 #pragma once
 
 #include <chrono>
+#include <gunrock/error.hxx>
 
 namespace gunrock {
 namespace util {
 
+void flush_cache() {
+  const bool flush_l2_cache = true;
+  if (flush_l2_cache) {
+    int current_device = 0;
+    error::throw_if_exception(cudaGetDevice(&current_device));
+
+    int l2_cache_bytes = 0;
+    error::throw_if_exception(cudaDeviceGetAttribute(
+        &l2_cache_bytes, cudaDevAttrL2CacheSize, current_device));
+
+    if (l2_cache_bytes > 0) {
+      const int memset_value = 0;
+      int* l2_cache_buffer = nullptr;
+      error::throw_if_exception(cudaMalloc(&l2_cache_buffer, l2_cache_bytes));
+      error::throw_if_exception(
+          cudaMemset(l2_cache_buffer, memset_value, l2_cache_bytes));
+      error::throw_if_exception(cudaFree(l2_cache_buffer));
+    }
+  }
+}
 struct timer_t {
   float time;
 
