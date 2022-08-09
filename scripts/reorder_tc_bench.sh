@@ -37,6 +37,8 @@ NCU_ARGS="${NCU_ARGS} --apply-rules yes --check-exit-code yes --page raw --csv"
 
 EXEC_PATH=${BUILD_DIR}/${BENCHMARK_EXE}
 
+NUM_RUNS=1
+
 for dataset in "${DATASETS_NAMES[@]}"
 do
     for order in "${ORDERS[@]}"
@@ -47,7 +49,7 @@ do
         OUTPUT_FILE=${JSON_DIR}/${order}/${dataset}.csv
 
         echo "${EXEC_PATH} ${INPUT_GRAPH} --csv ${OUTPUT_FILE}"
-        ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} &> ${OUTPUT_FILE}
+        ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} -n ${NUM_RUNS} &> ${OUTPUT_FILE}
     done
 
     # Algorithms with different naming pattern
@@ -56,7 +58,7 @@ do
     INPUT_GRAPH=${DATASETS_DIR}/${dataset}/${order}_${dataset}.mtx
     OUTPUT_FILE=${JSON_DIR}/${order}/${dataset}.csv
     echo "${EXEC_PATH} ${INPUT_GRAPH} --csv ${OUTPUT_FILE}"
-    ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} &> ${OUTPUT_FILE}
+    ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} -n ${NUM_RUNS}&> ${OUTPUT_FILE}
 
 
     order="RCM"
@@ -64,5 +66,5 @@ do
     INPUT_GRAPH=${DATASETS_DIR}/${dataset}/${dataset}.mtx.${order}.mtx
     OUTPUT_FILE=${JSON_DIR}/${order}/${dataset}.csv
     echo "${EXEC_PATH} ${INPUT_GRAPH} --json ${OUTPUT_FILE}"
-    ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} &> ${OUTPUT_FILE}
+    ncu ${NCU_ARGS} ${EXEC_PATH} -m ${INPUT_GRAPH} -n ${NUM_RUNS} &> ${OUTPUT_FILE}
 done
