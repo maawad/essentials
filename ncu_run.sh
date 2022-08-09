@@ -5,7 +5,7 @@
 # cmake  -DESSENTIALS_BUILD_BENCHMARKS=ON -DNVBench_ENABLE_CUPTI=ON ..
 
 # How to run:
-# srun -p wario --gpus=1 ./scripts/reorder_tc_bench.sh
+# srun -p daisy --gpus=1 ./scripts/reorder_tc_bench.sh
 
 # Input
 DATASETS_DIR="/data/gunrock/gunrock_dataset/luigi-8TB/large"
