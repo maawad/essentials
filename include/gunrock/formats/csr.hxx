@@ -7,8 +7,11 @@
 #include <thrust/transform.h>
 #include <sys/time.h>
 
-double getTime() {                                                         struct timeval tv;                                                      gettimeofday(&tv, 0);                                                   return tv.tv_sec * 1000.0 + tv.tv_usec / 1000.0;
-  }
+double getTime() {
+  struct timeval tv;
+  gettimeofday(&tv, 0);
+  return tv.tv_sec * 1000.0 + tv.tv_usec / 1000.0;
+}
 namespace gunrock {
 namespace format {
 
@@ -80,7 +83,8 @@ struct csr_t {
    * @return csr_t<space, index_t, offset_t, value_t>&
    */
   csr_t<space, index_t, offset_t, value_t> from_coo(
-      const coo_t<memory_space_t::host, index_t, offset_t, value_t>& coo) {
+      const coo_t<memory_space_t::host, index_t, offset_t, value_t>& coo,
+      index_t& max_degree_vertex) {
     number_of_rows = coo.number_of_rows;
     number_of_columns = coo.number_of_columns;
     number_of_nonzeros = coo.number_of_nonzeros;
@@ -103,7 +107,7 @@ struct csr_t {
       Aj.resize(number_of_nonzeros);
       Ax.resize(number_of_nonzeros);
       auto t2 = getTime();
-      printf("resize: %f\n",t2-t1);
+      // printf("resize: %f\n", t2 - t1);
       // Ap = _Ap.data();
       // Aj = _Aj.data();
       // Ax = _Ax.data();
@@ -116,7 +120,7 @@ struct csr_t {
       column_indices.resize(number_of_nonzeros);
       nonzero_values.resize(number_of_nonzeros);
       auto t2 = getTime();
-      printf("resize2: %f\n",t2-t1);
+      // printf("resize2: %f\n", t2 - t1);
 
       // Ap = raw_pointer_cast(row_offsets.data());
       // Aj = raw_pointer_cast(column_indices.data());
@@ -125,11 +129,27 @@ struct csr_t {
 
     // compute number of non-zero entries per row of A.
     auto tt1 = getTime();
+    index_t max_degree = 0;
+    bool max_degree_is_unique = true;
     for (offset_t n = 0; n < number_of_nonzeros; ++n) {
-      ++Ap[coo.row_indices[n]];
+      auto v = coo.row_indices[n];
+      auto degree = ++Ap[v];
+      if (degree > max_degree) {
+        max_degree_vertex = v;
+        max_degree = degree;
+        max_degree_is_unique = true;
+      }
+      if (degree == max_degree) {
+        max_degree_is_unique = false;
+      }
+    }
+    if (!max_degree_is_unique) {
+      // std::cout << "Warning: max degree vertex is not unique\n";
+      // std::cout << "Max degree: " << max_degree << "\n";
+      // std::cout << "Max degree vertex: " << max_degree_vertex << "\n";
     }
     auto tt2 = getTime();
-    printf("compute non-zeros: %f\n",tt2-tt1);
+    // printf("compute non-zeros: %f\n", tt2 - tt1);
 
     // cumulative sum the nnz per row to get row_offsets[].
     auto r1 = getTime();
@@ -140,7 +160,7 @@ struct csr_t {
     }
     Ap[number_of_rows] = number_of_nonzeros;
     auto r2 = getTime();
-    printf("comulative non-zeros: %f\n",r2-r1);
+    // printf("comulative non-zeros: %f\n", r2 - r1);
 
     // write coordinate column indices and nonzero values into CSR's
     // column indices and nonzero values.
@@ -155,14 +175,13 @@ struct csr_t {
       ++Ap[row];
     }
 
-
     for (index_t i = 0, last = 0; i <= number_of_rows; ++i) {
       index_t temp = Ap[i];
       Ap[i] = last;
       last = temp;
     }
     auto s2 = getTime();
-    printf("write columns: %f\n",s2-s1);
+    // printf("write columns: %f\n", s2 - s1);
 
     // If returning a device csr_t, move coverted data to device.
     if (space == memory_space_t::device) {
