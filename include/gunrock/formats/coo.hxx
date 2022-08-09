@@ -2,6 +2,7 @@
 
 #include <gunrock/memory.hxx>
 #include <gunrock/container/vector.hxx>
+#include <thrust/sort.h>
 
 namespace gunrock {
 namespace format {
@@ -36,7 +37,7 @@ struct coo_t {
         row_indices(rhs.row_indices),
         column_indices(rhs.column_indices),
         nonzero_values(rhs.nonzero_values) {}
-  
+
   coo_t()
       : number_of_rows(0),
         number_of_columns(0),
@@ -54,6 +55,17 @@ struct coo_t {
         nonzero_values(nnz) {}
 
   ~coo_t() {}
+
+  void sort() {
+    // Construct row/col iterators to traverse.
+    auto begin = thrust::make_zip_iterator(
+        thrust::make_tuple(row_indices.begin(), column_indices.begin()));
+    auto end = thrust::make_zip_iterator(
+        thrust::make_tuple(row_indices.end(), column_indices.end()));
+
+    // Sort the COO matrix.
+    thrust::sort_by_key(begin, end, nonzero_values.begin());
+  }
 
 };  // struct coo_t
 
