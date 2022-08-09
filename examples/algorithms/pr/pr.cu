@@ -1,6 +1,6 @@
 #include <gunrock/algorithms/pr.hxx>
-#include <gunrock/graph/reorder.hxx>
-#include <gunrock/util/timer.hxx>
+
+#include <nlohmann/json.hpp>
 
 using namespace gunrock;
 using namespace memory;
@@ -13,8 +13,7 @@ void test_pr(int num_arguments, char** argument_array) {
 
   // --
   // Define types
-  util::cpu_timer_t end_to_end_timer;
-  end_to_end_timer.begin();
+
   using vertex_t = int;
   using edge_t = int;
   using weight_t = float;
@@ -23,22 +22,27 @@ void test_pr(int num_arguments, char** argument_array) {
       format::csr_t<memory_space_t::device, vertex_t, edge_t, weight_t>;
   csr_t csr;
 
-  using coo_t =
-      format::coo_t<memory_space_t::device, vertex_t, edge_t, weight_t>;
-
   // --
   // IO
 
   std::string filename = argument_array[1];
 
+  float sort_time{0.0f};
+  float convert_time{0.0f};
+  vertex_t single_source = 0;  // rand() % n_vertices;
+
   if (util::is_market(filename)) {
     io::matrix_market_t<vertex_t, edge_t, weight_t> mm;
-    coo_t coo = mm.load(filename);
-    coo_t coo2 = coo;
-    auto context =
-        std::shared_ptr<gcuda::multi_context_t>(new gcuda::multi_context_t(0));
-    graph::reorder::uniquify(coo, coo2, context);
-    csr.from_coo(coo2);
+    auto mmatrix = mm.load(filename);
+    util::timer_t sort_timer;
+    sort_timer.begin();
+    mmatrix.sort();
+    sort_time = sort_timer.end();
+
+    util::timer_t convert_timer;
+    convert_timer.begin();
+    csr.from_coo(mmatrix, single_source);
+    convert_time = convert_timer.stop();
   } else if (util::is_binary_csr(filename)) {
     csr.read_binary(filename);
   } else {
@@ -72,15 +76,41 @@ void test_pr(int num_arguments, char** argument_array) {
   // --
   // GPU Run
 
-  float gpu_elapsed = gunrock::pr::run(G, alpha, tol, p.data().get());
-  auto end_to_end_time = end_to_end_timer.end();
+  const int num_experiments = 10;
+  double gpu_elapsed = 0.0;
+  for (auto exp = 0; exp < num_experiments; exp++) {
+    thrust::device_vector<weight_t> p(n_vertices);
+    util::flush_cache();
+    auto this_run = gunrock::pr::run(G, alpha, tol, p.data().get());
+    gpu_elapsed += this_run;
+  }
+  gpu_elapsed /= float(num_experiments);
 
+  using json = nlohmann::json;
+
+  std::string app_name = "pr";
+  std::string graph_name = std::filesystem::path(filename).stem();
+  std::string output_dir = "pareto/";
+  std::string fname =
+      output_dir + app_name + std::string("_") + graph_name + ".json";
+  std::fstream output(fname, std::ios::app);
+
+  json record;
+  record["graph_name"] = graph_name;
+  record["M"] = G.get_number_of_edges();
+  record["N"] = G.get_number_of_vertices();
+  record["run-time"] = gpu_elapsed;
+  record["sort-time"] = sort_time;
+  record["convert-time"] = convert_time;
+  output << record << "\n";
+  std::cout << record << "\n";
+
+  return;
   // --
   // Log + Validate
-  print::head(p, 40, "GPU rank");
+  // print::head(p, 40, "GPU rank");
 
-  std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
-  std::cout << "End to End Time : " << end_to_end_time << " (ms)" << std::endl;
+  // std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
 }
 
 int main(int argc, char** argv) {
