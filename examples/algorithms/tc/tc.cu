@@ -5,6 +5,8 @@
 
 #include <cxxopts.hpp>
 
+#include <nlohmann/json.hpp>
+
 using namespace gunrock;
 using namespace memory;
 
@@ -62,14 +64,24 @@ void test_tc(int num_arguments, char** argument_array) {
   // IO
   parameters_t params(num_arguments, argument_array);
 
+  float sort_time{0.0f};
+  float convert_time{0.0f};
   if (util::is_market(params.filename)) {
     io::matrix_market_t<vertex_t, edge_t, weight_t> mm;
     auto mmatrix = mm.load(params.filename);
     if (!mm_is_symmetric(mm.code)) {
       std::cerr << "Error: input matrix must be symmetric" << std::endl;
-      exit(1);
+      // exit(1);
     }
-    csr.from_coo(mmatrix);
+    util::timer_t sort_timer;
+    sort_timer.begin();
+    mmatrix.sort();
+    sort_time = sort_timer.end();
+
+    util::timer_t convert_timer;
+    convert_timer.begin();
+    csr.from_coo(mmatrix, single_source);
+    convert_time = convert_timer.stop();
   } else if (util::is_binary_csr(params.filename)) {
     csr.read_binary(params.filename);
   } else {
@@ -94,44 +106,78 @@ void test_tc(int num_arguments, char** argument_array) {
   // Params and memory allocation
 
   vertex_t n_vertices = G.get_number_of_vertices();
-  thrust::device_vector<count_t> triangles_count(n_vertices, 0);
 
   // --
   // GPU Run
+  const int num_experiments = 10;
+  double gpu_elapsed = 0.0;
+  std::size_t total_triangles_ = 0;
 
-  std::size_t total_triangles = 0;
-  float gpu_elapsed = tc::run(G, params.reduce_all_triangles,
-                              triangles_count.data().get(), &total_triangles);
+  for (auto exp = 0; exp < num_experiments; exp++) {
+    std::size_t total_triangles = 0;
+    thrust::device_vector<count_t> triangles_count(n_vertices, 0);
+    util::flush_cache();
+    auto exp_gpu_elapsed =
+        tc::run(G, params.reduce_all_triangles, triangles_count.data().get(),
+                &total_triangles);
 
+    total_triangles_ = total_triangles;
+    gpu_elapsed += exp_gpu_elapsed;
+    // std::cout << exp << " :" << exp_gpu_elapsed << std::endl;
+  }
+  gpu_elapsed /= double(num_experiments);
+
+  using json = nlohmann::json;
+
+  std::string app_name = "tc";
+  std::string graph_name = std::filesystem::path(params.filename).stem();
+  std::string output_dir = "pareto/";
+  std::string fname =
+      output_dir + app_name + std::string("_") + graph_name + ".json";
+  std::fstream output(fname, std::ios::app);
+
+  json record;
+  record["graph_name"] = graph_name;
+  record["M"] = G.get_number_of_edges();
+  record["N"] = G.get_number_of_vertices();
+  record["run-time"] = gpu_elapsed;
+  record["sort-time"] = sort_time;
+  record["convert-time"] = convert_time;
+  record["num-triangles"] = total_triangles_;
+  output << record << "\n";
+  std::cout << record << "\n";
+
+  return;
   // --
   // Log
 
-  print::head(triangles_count, 40, "Per-vertex triangle count");
-  if (params.reduce_all_triangles) {
-    std::cout << "Total Graph Traingles : " << total_triangles << std::endl;
-  }
-  std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
+  // print::head(triangles_count, 40, "Per-vertex triangle count");
+  // if (params.reduce_all_triangles) {
+  //   std::cout << "Total Graph Traingles : " << total_triangles << std::endl;
+  // }
+  // std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
 
-  // --
-  // CPU validation
-  if (params.validate) {
-    std::vector<count_t> reference_triangles_count(n_vertices, 0);
-    std::size_t reference_total_triangles = 0;
+  // // --
+  // // CPU validation
+  // if (params.validate) {
+  //   std::vector<count_t> reference_triangles_count(n_vertices, 0);
+  //   std::size_t reference_total_triangles = 0;
 
-    float cpu_elapsed =
-        tc_cpu::run(csr, reference_triangles_count, reference_total_triangles);
-    uint32_t n_errors = 0;
-    if (total_triangles != reference_total_triangles) {
-      std::cout << "Error: Total TC mismatch: " << total_triangles
-                << "! = " << reference_total_triangles << std::endl;
-      n_errors++;
-    }
-    n_errors += util::compare(
-        triangles_count.data().get(), reference_triangles_count.data(),
-        n_vertices, [](const auto x, const auto y) { return x != y; }, true);
-    std::cout << "CPU Elapsed Time : " << cpu_elapsed << " (ms)" << std::endl;
-    std::cout << "Number of errors : " << n_errors << std::endl;
-  }
+  //   float cpu_elapsed =
+  //       tc_cpu::run(csr, reference_triangles_count,
+  //       reference_total_triangles);
+  //   uint32_t n_errors = 0;
+  //   if (total_triangles != reference_total_triangles) {
+  //     std::cout << "Error: Total TC mismatch: " << total_triangles
+  //               << "! = " << reference_total_triangles << std::endl;
+  //     n_errors++;
+  //   }
+  //   n_errors += util::compare(
+  //       triangles_count.data().get(), reference_triangles_count.data(),
+  //       n_vertices, [](const auto x, const auto y) { return x != y; }, true);
+  //   std::cout << "CPU Elapsed Time : " << cpu_elapsed << " (ms)" <<
+  //   std::endl; std::cout << "Number of errors : " << n_errors << std::endl;
+  // }
 }
 
 int main(int argc, char** argv) {
