@@ -1,6 +1,8 @@
 #include <gunrock/algorithms/sssp.hxx>
 #include "sssp_cpu.hxx"  // Reference implementation
 
+#include <nlohmann/json.hpp>
+
 using namespace gunrock;
 using namespace memory;
 
@@ -26,9 +28,23 @@ void test_sssp(int num_arguments, char** argument_array) {
   csr_t csr;
   std::string filename = argument_array[1];
 
+  float sort_time{0.0f};
+  float convert_time{0.0f};
+  vertex_t single_source = 0;  // rand() % n_vertices;
+
   if (util::is_market(filename)) {
     io::matrix_market_t<vertex_t, edge_t, weight_t> mm;
-    csr.from_coo(mm.load(filename));
+    auto mmatrix = mm.load(filename);
+    util::timer_t sort_timer;
+    sort_timer.begin();
+    mmatrix.sort();
+    sort_time = sort_timer.end();
+
+    util::timer_t convert_timer;
+    convert_timer.begin();
+    csr.from_coo(mmatrix, single_source);
+    convert_time = convert_timer.stop();
+
   } else if (util::is_binary_csr(filename)) {
     csr.read_binary(filename);
   } else {
@@ -48,13 +64,16 @@ void test_sssp(int num_arguments, char** argument_array) {
       csr.nonzero_values.data().get()   // values
   );  // supports row_indices and column_offsets (default = nullptr)
 
+  // std::cout << G.get_number_of_edges() << std::endl;
+  // std::cout << G.get_number_of_vertices() << std::endl;
+
   // --
+
   // Params and memory allocation
   srand(time(NULL));
 
   vertex_t n_vertices = G.get_number_of_vertices();
-  vertex_t single_source = 0;  // rand() % n_vertices;
-  std::cout << "Single Source = " << single_source << std::endl;
+  // std::cout << "Single Source = " << single_source << std::endl;
 
   // --
   // GPU Run
@@ -69,39 +88,62 @@ void test_sssp(int num_arguments, char** argument_array) {
   //     allocate<vertex_t>(n_vertices * sizeof(vertex_t)),
   //     deleter_t<vertex_t>());
 
-  thrust::device_vector<weight_t> distances(n_vertices);
-  thrust::device_vector<vertex_t> predecessors(n_vertices);
-
-  float gpu_elapsed = 0.0f;
-  int num_runs = 5;
-
-  for (auto i = 0; i < num_runs; i++)
+  double gpu_elapsed = 0.0;
+  int num_runs = 10;
+  const bool validate = false;
+  for (auto i = 0; i < num_runs; i++) {
+    thrust::device_vector<weight_t> distances(n_vertices);
+    thrust::device_vector<vertex_t> predecessors(n_vertices);
+    util::flush_cache();
     gpu_elapsed += gunrock::sssp::run(G, single_source, distances.data().get(),
                                       predecessors.data().get());
 
-  gpu_elapsed /= num_runs;
+    if (validate) {
+      // --
+      // CPU Run
+      thrust::host_vector<weight_t> h_distances(n_vertices);
+      thrust::host_vector<vertex_t> h_predecessors(n_vertices);
 
-  // --
-  // CPU Run
+      float cpu_elapsed = sssp_cpu::run<csr_t, vertex_t, edge_t, weight_t>(
+          csr, single_source, h_distances.data(), h_predecessors.data());
 
-  thrust::host_vector<weight_t> h_distances(n_vertices);
-  thrust::host_vector<vertex_t> h_predecessors(n_vertices);
+      int n_errors =
+          util::compare(distances.data().get(), h_distances.data(), n_vertices);
 
-  float cpu_elapsed = sssp_cpu::run<csr_t, vertex_t, edge_t, weight_t>(
-      csr, single_source, h_distances.data(), h_predecessors.data());
+      // --
+      // Log + Validate
 
-  int n_errors =
-      util::compare(distances.data().get(), h_distances.data(), n_vertices);
+      print::head(distances, 40, "GPU distances");
+      print::head(h_distances, 40, "CPU Distances");
 
-  // --
-  // Log + Validate
+      std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
+      std::cout << "CPU Elapsed Time : " << cpu_elapsed << " (ms)" << std::endl;
+      std::cout << "Number of errors : " << n_errors << std::endl;
+    }
+  }
 
-  print::head(distances, 40, "GPU distances");
-  print::head(h_distances, 40, "CPU Distances");
+  gpu_elapsed /= double(num_runs);
 
-  std::cout << "GPU Elapsed Time : " << gpu_elapsed << " (ms)" << std::endl;
-  std::cout << "CPU Elapsed Time : " << cpu_elapsed << " (ms)" << std::endl;
-  std::cout << "Number of errors : " << n_errors << std::endl;
+  using json = nlohmann::json;
+
+  std::string app_name = "sssp";
+  std::string graph_name = std::filesystem::path(filename).stem();
+  std::string output_dir = "pareto/";
+  std::string fname =
+      output_dir + app_name + std::string("_") + graph_name + ".json";
+  std::fstream output(fname, std::ios::app);
+
+  json record;
+  record["graph_name"] = graph_name;
+  record["M"] = G.get_number_of_edges();
+  record["N"] = G.get_number_of_vertices();
+  record["run-time"] = gpu_elapsed;
+  record["sort-time"] = sort_time;
+  record["convert-time"] = convert_time;
+  output << record << "\n";
+  std::cout << record << "\n";
+
+  return;
 }
 
 int main(int argc, char** argv) {
