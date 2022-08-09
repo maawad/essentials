@@ -145,7 +145,7 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
       return false;
     };
 
-    operators::advance::execute<operators::load_balance_t::block_mapped,
+    operators::advance::execute<operators::load_balance_t::merge_path,
                                 operators::advance_direction_t::forward,
                                 operators::advance_io_type_t::graph,
                                 operators::advance_io_type_t::none>(

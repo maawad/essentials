@@ -101,7 +101,7 @@ struct enactor_t : gunrock::enactor_t<problem_t> {
 
     // Perform advance on the above lambda-op
     operators::advance::execute<
-        operators::load_balance_t::block_mapped,
+        operators::load_balance_t::merge_path,
         operators::advance_direction_t::forward,  // direction (backward for
                                                   // transpose)
         operators::advance_io_type_t::graph,      // entire graph as input
