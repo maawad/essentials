@@ -13,7 +13,7 @@ ALGORITHM="sssp"
 # BENCHMARK_EXE=${ALGORITHM}'_bench'
 BENCHMARK_EXE=${ALGORITHM}
 DATASETS_NAMES=("rgg_n_2_23_s0" "rgg_n_2_22_s0" "rgg_n_2_24_s0"
-                 "hollywood-2009" "coAuthorsCiteseer" "coAuthorsDBLP"
+                 "hollywood-2009"
                  "delaunay_n24"  "delaunay_n23"  "delaunay_n22"
                  "great-britain_osm" "road_usa" "arabic-2005"
                  "soc-LiveJournal1" "ljournal-2008"
@@ -27,7 +27,7 @@ DATASETS_NAMES=("rgg_n_2_23_s0" "rgg_n_2_22_s0" "rgg_n_2_24_s0"
 # Output
 JSON_DIR="csv/"${ALGORITHM}
 
-ORDERS=("rand" "hub" "chub" "deg" "gorder" "edgeW3")
+ORDERS=("rand" "hub" "deg" "gorder")
 
 NCU_ARGS=""
 NCU_ARGS="${NCU_ARGS} --section MemoryWorkloadAnalysis --section MemoryWorkloadAnalysis_Tables"
