@@ -53,8 +53,8 @@ void test_tc(int num_arguments, char** argument_array) {
   // --
   // Define types
 
-  using vertex_t = uint32_t;
-  using edge_t = uint32_t;
+  using vertex_t = int;
+  using edge_t = int;
   using weight_t = float;
   using count_t = vertex_t;
 
