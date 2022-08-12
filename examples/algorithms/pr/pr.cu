@@ -36,7 +36,7 @@ void test_pr(int num_arguments, char** argument_array) {
     auto mmatrix = mm.load(filename);
     util::timer_t sort_timer;
     sort_timer.begin();
-    mmatrix.sort();
+    // mmatrix.sort();
     sort_time = sort_timer.end();
 
     util::timer_t convert_timer;

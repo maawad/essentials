@@ -44,7 +44,7 @@ void test_spmv(int num_arguments, char** argument_array) {
 
   util::timer_t sort_timer;
   sort_timer.begin();
-  mmatrix.sort();
+  // mmatrix.sort();
   sort_time = sort_timer.end();
 
   util::timer_t convert_timer;
