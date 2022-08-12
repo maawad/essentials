@@ -35,12 +35,12 @@ void test_sssp(int num_arguments, char** argument_array) {
   if (util::is_market(filename)) {
     io::matrix_market_t<vertex_t, edge_t, weight_t> mm;
     auto mmatrix = mm.load(filename);
-    util::timer_t sort_timer;
+    util::cpu_timer_t sort_timer;
     sort_timer.begin();
     // mmatrix.sort();
     sort_time = sort_timer.end();
 
-    util::timer_t convert_timer;
+    util::cpu_timer_t convert_timer;
     convert_timer.begin();
     csr.from_coo(mmatrix, single_source);
     convert_time = convert_timer.stop();

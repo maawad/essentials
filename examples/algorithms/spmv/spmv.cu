@@ -42,12 +42,12 @@ void test_spmv(int num_arguments, char** argument_array) {
   auto mmatrix = mm.load(filename);
   vertex_t single_source = 0;  // rand() % n_vertices;
 
-  util::timer_t sort_timer;
+  util::cpu_timer_t sort_timer;
   sort_timer.begin();
   // mmatrix.sort();
   sort_time = sort_timer.end();
 
-  util::timer_t convert_timer;
+  util::cpu_timer_t convert_timer;
   convert_timer.begin();
   csr.from_coo(mmatrix, single_source);
   convert_time = convert_timer.stop();
