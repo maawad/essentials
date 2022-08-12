@@ -5,5 +5,5 @@
 
 # python scripts/plot_from_csv.py -id ./csv/ -alg tc
 # python scripts/plot_from_csv.py -id ./csv/ -alg spmv
-# python scripts/plot_from_csv.py -id ./csv/ -alg pr
-python scripts/plot_from_csv.py -id ./csv/ -alg sssp
+python scripts/plot_from_csv.py -id ./csv/ -alg pr
+# python scripts/plot_from_csv.py -id ./csv/ -alg sssp

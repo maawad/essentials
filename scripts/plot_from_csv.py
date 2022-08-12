@@ -74,8 +74,8 @@ def compute_sectors_total(csv):
 def extract_data_from_csv(csv_file_path, queries):
     print(csv_file_path)
     skip = 3
-    if 'spmv' in csv_file_path or 'pr' in csv_file_path:
-        skip = 2
+    # if 'spmv' in csv_file_path or 'pr' in csv_file_path:
+    #     skip = 2
     csv = pd.read_csv(csv_file_path, skiprows=skip)
     # while skip < 20:
     #     try:
@@ -224,6 +224,9 @@ def figure1(parser):
         graphs_order['soc-LiveJournal1'] = 68475391
         graphs_order['ljournal-2008'] = 79023142
         graphs_order['arabic-2005'] = 631153669
+        graphs_order['kron_g500-logn20'] = 631153669
+        graphs_order['kron_g500-logn21'] = 631153669
+        graphs_order['soc-orkut'] = 631153669
 
     for metric in metrics:
         metric_df = pd.DataFrame()
@@ -232,8 +235,8 @@ def figure1(parser):
                 cur_dir = join(args.input_dir, graph_algo)
                 reorder_algorithms = [d for d in listdir(cur_dir)
                                       if isdir(join(cur_dir, d))]
-                reorder_algorithms.remove('chub')
-                reorder_algorithms.remove('edgeW3')
+                # reorder_algorithms.remove('chub')
+                # reorder_algorithms.remove('edgeW3')
 
                 for reorder_algo in reorder_algorithms:
                     json_dir = join(cur_dir, reorder_algo)
@@ -272,7 +275,7 @@ def figure1(parser):
     # .configure_axis(labelFontSize=15,
     # titleFontSize=20).configure_legend(titleFontSize=20,
     # labelFontSize=15).configure_title(fontSize=50)
-
+    print(longform.to_string())
     chart_fname = args.algorithms + '_' + 'by_' + sort_by + '.svg'
     chart.save(chart_fname, scale_factor=2.0)
 
@@ -283,7 +286,7 @@ if __name__ == "__main__":
     parser.add_argument('-od', '--output-dir', default='./figures')
     parser.add_argument('-my', '--min-y', default=-1, type=int)
     parser.add_argument('-xy', '--max-y', default=-1, type=int)
-    parser.add_argument('-alg', '--algorithms', default='tc')
+    parser.add_argument('-alg', '--algorithms', default='spmv')
 
     args = parser.parse_args()
     print("Reading results from: ", args.input_dir)
