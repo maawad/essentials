@@ -61,13 +61,3 @@
 ./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.rand.mtx --csv csv/tc/rand/kron_g500-logn21.csv
 ./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.hub.mtx --csv csv/tc/hub/kron_g500-logn21.csv
 ./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.deg.mtx --csv csv/tc/deg/kron_g500-logn21.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.gorder.mtx --csv csv/tc/gorder/kron_g500-logn21.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/write_reorder2_kron_g500-logn21.mtx --csv csv/tc/write_reorder2/kron_g500-logn21.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/kron_g500-logn21/kron_g500-logn21.mtx.RCM.mtx --json csv/tc/RCM/kron_g500-logn21.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.rand.mtx --csv csv/tc/rand/soc-orkut.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.hub.mtx --csv csv/tc/hub/soc-orkut.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.deg.mtx --csv csv/tc/deg/soc-orkut.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.gorder.mtx --csv csv/tc/gorder/soc-orkut.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/write_reorder2_soc-orkut.mtx --csv csv/tc/write_reorder2/soc-orkut.csv
-./build/bin/tc /data/gunrock/gunrock_dataset/luigi-8TB/large/soc-orkut/soc-orkut.mtx.RCM.mtx --json csv/tc/RCM/soc-orkut.csv
-srun: error: daisy: task 0: Exited with exit code 9
