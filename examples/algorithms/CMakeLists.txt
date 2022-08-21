@@ -12,6 +12,7 @@ add_subdirectory(spmv)
 add_subdirectory(spgemm)
 add_subdirectory(mst)
 add_subdirectory(tc)
+add_subdirectory(mgpu_boba)
 # end /* Add algorithms' subdirectories */
 
 # begin /* Add experimental algorithms' subdirectories */
